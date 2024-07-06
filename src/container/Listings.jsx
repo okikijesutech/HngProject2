@@ -1,26 +1,42 @@
 import React from "react";
-import item1 from "../assets/item1.png";
 import { Link } from "react-router-dom";
-import itemData from "../items.json";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import item1 from "../assets/item1.png";
+import item2 from "../assets/item2.png";
+import item3 from "../assets/item3.png";
+import item4 from "../assets/item4.png";
+import item5 from "../assets/item5.png";
+import item6 from "../assets/item6.png";
+import item7 from "../assets/item7.png";
+// Add imports for the rest of your images
+import itemData from "../items.json";
+
+const imageMap = {
+  "item1.png": item1,
+  "item2.png": item2,
+  "item3.png": item3,
+  "item4.png": item4,
+  "item5.png": item5,
+  "item6.png": item6,
+  "item7.png": item7,
+};
 
 const items = itemData;
 
 const Listings = () => {
   return (
-    <div className='flex flex-col justify-center items-center  bg-gradient-to-b from-pink-200 to-pink-400 px-10 py-10'>
+    <div className='flex flex-col justify-center items-center bg-gradient-to-b from-pink-200 to-pink-400 px-10 py-10'>
       <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
         {items.map((item) => (
           <div key={item.id} className='w-[193px] md:w-[300px] p-4'>
             <img
-              src={item.img}
+              src={imageMap[item.img]}
               alt={item.name}
               className='w-full h-48 object-contain'
             />
             <p className='text-gray-700 font-bold mt-2'>{item.name}</p>
             <p className='text-gray-500 text-sm'>{item.cartegory}</p>
             <p className='text-blue-500 font-bold'>{item.price}</p>
-
             <button className='bg-white px-4 py-2 shadow-md w-full'>
               + ADD
             </button>

@@ -4,8 +4,9 @@ import { FaChevronCircleRight, FaChevronCircleLeft } from "react-icons/fa";
 import item1 from "../assets/item1.png";
 import item2 from "../assets/item2.png";
 import item3 from "../assets/item3.png";
-
-const images = [item1, item2, item3];
+import item4 from "../assets/item4.png";
+import item5 from "../assets/item5.png";
+import item6 from "../assets/item6.png";
 
 const items = [
   {
@@ -13,18 +14,21 @@ const items = [
     cartegory: "Jacket",
     price: "$50.50",
     stars: 3,
+    img: item1,
   },
   {
     name: "Zee Gown",
     cartegory: "Dress",
     price: "$95.50",
     stars: 4,
+    img: item1,
   },
   {
     name: "Nike Air Jordans",
     cartegory: "Shoes",
     price: "$150.00",
     stars: 4,
+    img: item1,
   },
 ];
 
@@ -34,50 +38,25 @@ const cartItems = [
     category: "Jacket",
     Price: "$50.50",
     unit: "3",
+    img: item1,
   },
   {
     name: "Zee Gown",
     category: "Dress",
     Price: "$95.50",
     unit: "1",
+    img: item1,
   },
   {
     name: "Nike Air Jordans",
     category: "Shoes",
     Price: "$150.00",
     unit: "3",
+    img: item1,
   },
 ];
 
 const Cart = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slideRef = useRef(null);
-
-  const handleNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
-  };
-
-  const handlePrevSlide = () => {
-    setCurrentSlide(
-      (prevSlide) => (prevSlide - 1 + images.length) % images.length
-    );
-  };
-
-  useEffect(() => {
-    const intervalId = setInterval(handleNextSlide, 3000);
-    return () => clearInterval(intervalId);
-  }, [images]);
-
-  useEffect(() => {
-    const slide = slideRef.current;
-    slide.children[currentSlide].classList.add("opacity-100");
-    for (let i = 0; i < images.length; i++) {
-      if (i !== currentSlide) {
-        slide.children[i].classList.remove("opacity-100");
-        slide.children[i].classList.add("opacity-0");
-      }
-    }
-  }, [currentSlide, images]);
   return (
     <div className='bg-gradient-to-b from-pink-200 to-pink-400 px-10 py-10'>
       <div className='flex justify-between mx-[200px] mb-6 pb-6 border-b border-black'>
@@ -88,14 +67,14 @@ const Cart = () => {
         <div className='hidden md:flex flex-col gap-4 border-r border-black pr-2'>
           {items.map((item) => (
             <div key={item.id} className='w-[450px] p-4 flex'>
-              <div className='w-[150px]'>
+              <div className='w-[300px]'>
                 <img
                   src={item.img}
                   alt={item.name}
                   className='w-full h-48 object-contain'
                 />
               </div>
-              <div className='w-[300px]'>
+              <div className='w-[150px]'>
                 <p className='text-gray-700 font-bold mt-2'>{item.name}</p>
                 <p className='text-gray-500 text-sm'>{item.cartegory}</p>
                 <p className='text-blue-500 font-bold'>{item.price}</p>
@@ -106,21 +85,21 @@ const Cart = () => {
               </div>
             </div>
           ))}
-          <button className='bg-blue-600 text-white px-4 py-2 mx-auto w-[300px] mt-10'>
+          <button className='bg-blue-600 text-white px-4 py-2 mx-auto w-[300px] mt-[150px]'>
             Add More
           </button>
         </div>
         <div className='flex flex-col gap-4 '>
           {cartItems.map((item) => (
             <div key={item.id} className='w-[450px] p-4 flex'>
-              <div className='w-[150px]'>
+              <div className='w-[300px]'>
                 <img
                   src={item.img}
                   alt={item.name}
                   className='w-full h-48 object-contain rounded-lg'
                 />
               </div>
-              <div>
+              <div className='w-[150px]'>
                 <p className='text-gray-700 font-bold mt-2'>{item.name}</p>
                 <p className='text-gray-500 text-sm'>{item.category}</p>
                 <p className='text-blue-500 font-bold'>{item.Price}</p>
@@ -128,33 +107,6 @@ const Cart = () => {
               </div>
             </div>
           ))}
-          <div className='block md:hidden relative overflow-hidden w-full h-[400px]'>
-            <div
-              ref={slideRef}
-              className='flex animate-slide duration-700 ease-in-out'
-            >
-              {images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image.src}
-                  alt={image.alt}
-                  className='w-full h-full object-cover absolute top-0 left-0 transition opacity-0'
-                />
-              ))}
-            </div>
-            <button
-              className='absolute top-1/2 left-2 p-2 rounded-full bg-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500'
-              onClick={handlePrevSlide}
-            >
-              <FaChevronCircleLeft />
-            </button>
-            <button
-              className='absolute top-1/2 right-2 p-2 rounded-full bg-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500'
-              onClick={handleNextSlide}
-            >
-              <FaChevronCircleRight />
-            </button>
-          </div>
 
           <div className='border border-black rounded-sm px-4 py-2'>
             <h3 className='font-bold'>Order Summary</h3>
