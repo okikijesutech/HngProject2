@@ -25,7 +25,7 @@ const items = itemData;
 
 const Listings = () => {
   return (
-    <div className='flex flex-col justify-center items-center bg-gradient-to-b from-pink-200 to-pink-400 px-10 py-10'>
+    <div className='flex flex-col justify-center items-center bg-gradient-to-b from-pink-200 to-pink-400 px-3 md:px-10 py-4 md:py-10'>
       <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
         {items.map((item) => (
           <div key={item.id} className='w-[193px] md:w-[300px] p-4'>
