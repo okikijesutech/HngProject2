@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className='bg-black text-white px-[5px] md:px-[100px] py-[20px] md:py-[60px]'>
+    <div className='bg-black text-white px-[15px] md:px-[100px] py-[20px] md:py-[60px]'>
       <div className='flex gap-4 pb-[70px] border-b-2 border-white'>
         <div className='flex flex-col items-center text-center'>
           <h3 className='font-extralight text-xl'>JOIN OUR EMAIL LIST</h3>
@@ -20,7 +20,7 @@ const Footer = () => {
             placeholder='Enter your email address'
             className='w-full px-3 py-2'
           />
-          <div className='flex md:hidden w-[350px] items-start my-6 '>
+          <div className='flex md:hidden w-[400px] items-start my-6 '>
             <input type='checkbox' className='mt-[5px] mr-2' />
             <p className='text-left'>
               I acknowledge i haveread and understood Privacy Policy and i
