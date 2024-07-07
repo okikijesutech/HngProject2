@@ -1,5 +1,5 @@
 import React from "react";
-import { FaXmark } from "react-icons/fa6";
+import { FaXmark, FaChevronLeft } from "react-icons/fa6";
 import item1 from "../assets/item1.png";
 import item3 from "../assets/item3.png";
 import item6 from "../assets/ZeeG.png";
@@ -34,9 +34,12 @@ const cartItems = [
 const CheckoutListing = () => {
   return (
     <div className='p-6'>
-      <h1 className='font-helvetica font-bold text-40 leading-46 text-center mb-4 md:text-left lg:text-center md:text-2xl lg:text-4xl md:leading-46'>
-        Review your items
-      </h1>
+      <div className='flex lg:block '>
+        <FaChevronLeft size={24} className=' lg:hidden mr-28 md:mr-8' />
+        <h1 className='font-helvetica font-bold text-40 leading-46 text-center mb-4 md:text-left lg:text-center md:text-2xl lg:text-4xl md:leading-46'>
+          Review your items
+        </h1>
+      </div>
       <hr className='border-black mb-6' />
       <table className='w-full border-collapse font-helvetica text-24 font-bold leading-27.6 text-left'>
         <thead>

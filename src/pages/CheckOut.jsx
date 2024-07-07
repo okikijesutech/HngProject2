@@ -4,7 +4,7 @@ import OrderSummary from "../components/OrderSummary";
 
 const CheckOut = () => {
   return (
-    <div className='bg-gradient-to-b from-pink-200 to-pink-400 px-4 pt-16'>
+    <div className='bg-gradient-to-b from-pink-200 to-pink-400 px-4 pt-6 lg:pt-16'>
       <CheckoutListing />
       <div className='flex flex-col-reverse md:flex-col-reverse lg:flex-row lg:gap-[225px] mt-14 md:mt-36 lg:mt-24 px-[14px] md:px-[33px]'>
         <div className='flex flex-col md:flex-row lg:flex-col mt-16 lg:mt-0 text-base font-bold'>
