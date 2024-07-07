@@ -10,34 +10,31 @@ import {
 import item1 from "../assets/item1.png";
 import item2 from "../assets/item2.png";
 import item3 from "../assets/item3.png";
-import item4 from "../assets/item4.png";
 import item5 from "../assets/item5.png";
-import item6 from "../assets/item6.png";
+import item6 from "../assets/ZeeG.png";
+import coporate from "../assets/corporate.png";
 import "./cart.css";
 
 const images = [item1, item2, item3];
 
 const items = [
   {
-    name: "Original Kids' Fits",
-    cartegory: "Jacket",
+    name: "Corporate Wear",
+    cartegory: "Women",
     price: "$50.50",
-    stars: 3,
-    img: item1,
+    img: coporate,
   },
   {
-    name: "Zee Gown",
-    cartegory: "Dress",
-    price: "$95.50",
-    stars: 4,
-    img: item1,
+    name: "Net Blouse",
+    cartegory: "Women",
+    price: "$50.50",
+    img: item5,
   },
   {
     name: "Nike Air Jordans",
     cartegory: "Shoes",
-    price: "$150.00",
-    stars: 4,
-    img: item1,
+    price: "$50.50",
+    img: item2,
   },
 ];
 
@@ -54,14 +51,14 @@ const cartItems = [
     category: "Dress",
     Price: "$95.50",
     unit: "1",
-    img: item1,
+    img: item6,
   },
   {
     name: "Nike Air Jordans",
     category: "Shoes",
     Price: "$150.00",
     unit: "3",
-    img: item1,
+    img: item3,
   },
 ];
 
@@ -182,15 +179,13 @@ const Cart = () => {
           <div className='relative flex md:hidden overflow-x-auto'>
             <FaChevronCircleLeft
               onClick={scrollLeft}
-              className=' left-0 z-10 text-3xl top-1/2 '
+              className=' left-4 z-10 text-2xl top-1/2 '
               style={{
                 backgroundColor: "#292D32",
                 color: "black",
                 borderRadius: "50%",
-
                 cursor: "pointer",
                 position: "absolute",
-                right: "0",
                 zIndex: "10",
               }}
             />
@@ -209,15 +204,13 @@ const Cart = () => {
             </div>
             <FaChevronCircleRight
               onClick={scrollRight}
-              className=' right-0 text-3xl top-1/2'
+              className=' right-4 text-2xl top-1/2'
               style={{
                 backgroundColor: "#292D32",
                 color: "black",
                 borderRadius: "50%",
-
                 cursor: "pointer",
                 position: "absolute",
-                right: "0",
                 zIndex: "10",
               }}
             />
@@ -251,7 +244,7 @@ const Cart = () => {
               <Link className='underline'>Sign In</Link> or{" "}
               <Link className='underline'>Join Now</Link>
             </p>
-            <p className='text-base font-normal mx-10 mt-2 mb-5'>
+            <p className='text-base font-normal mx-10 mt-2 pb-5'>
               Need help? Chat with us
             </p>
           </div>
@@ -264,7 +257,7 @@ const Cart = () => {
           <Link className='underline'>Sign In</Link> or{" "}
           <Link className='underline'>Join Now</Link>
         </p>
-        <p className='text-base font-normal mx-10 mt-2 mb-5'>
+        <p className='text-base font-normal mx-10 mt-2 pb-5'>
           Need help? Chat with us
         </p>
       </div>

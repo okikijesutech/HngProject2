@@ -2,64 +2,106 @@
   {
     "name": "White Shirt",
     "cartegory": "Men",
-    "price": "$30.00",
+    "price": "$50.50",
     "img": "item1.png",
     "id": 1
   },
   {
-    "name": "White Shirt",
-    "cartegory": "Men",
-    "price": "$30.00",
+    "name": "Net Blouse",
+    "cartegory": "Women",
+    "price": "$50.50",
     "img": "item2.png",
     "id": 2
   },
   {
-    "name": "White Shirt",
-    "cartegory": "Men",
-    "price": "$30.00",
+    "name": "Casual Wears",
+    "cartegory": "Kids",
+    "price": "$50.50",
     "img": "item3.png",
     "id": 3
   },
   {
-    "name": "White Shirt",
+    "name": "White Trouser",
     "cartegory": "Men",
-    "price": "$30.00",
+    "price": "$50.50",
     "img": "item4.png",
     "id": 4
   },
   {
-    "name": "White Shirt",
-    "cartegory": "Men",
-    "price": "$30.00",
+    "name": "Shoe",
+    "cartegory": "Unisex",
+    "price": "$50.50",
     "img": "item5.png",
     "id": 5
   },
   {
-    "name": "White Shirt",
-    "cartegory": "Men",
-    "price": "$30.00",
+    "name": "Corporate Wear",
+    "cartegory": "Women",
+    "price": "$50.50",
     "img": "item6.png",
     "id": 6
   },
   {
-    "name": "White Shirt",
-    "cartegory": "Men",
-    "price": "$30.00",
+    "name": "Modern Wear",
+    "cartegory": "Kids",
+    "price": "$50.50",
     "img": "item7.png",
     "id": 7
   },
   {
-    "name": "White Shirt",
+    "name": "Suite",
     "cartegory": "Men",
-    "price": "$30.00",
-    "img": "item3.png",
+    "price": "$50.50",
+    "img": "item8.png",
     "id": 8
   },
   {
-    "name": "White Shirt",
-    "cartegory": "Men",
-    "price": "$30.00",
-    "img": "item5.png",
+    "name": "Zee Gown",
+    "cartegory": "Women",
+    "price": "$50.50",
+    "img": "item9.png",
     "id": 9
+  },
+  {
+    "name": "Party Wear",
+    "cartegory": "Women",
+    "price": "$50.50",
+    "img": "item10.png",
+    "id": 10
+  },
+  {
+    "name": "Ball gown",
+    "cartegory": "Kids",
+    "price": "$50.50",
+    "img": "item11.png",
+    "id": 11
+  },
+  {
+    "name": "Party Wear",
+    "cartegory": "Women",
+    "price": "$50.50",
+    "img": "item12.png",
+    "id": 12
+  },
+  {
+    "name": "Corporate Wear",
+    "cartegory": "Women",
+    "price": "$50.50",
+    "img": "item13.png",
+    "id": 13
+  },
+  {
+    "name": "Corporate Wear",
+    "cartegory": "Women",
+    "price": "$50.50",
+    "img": "item14.png",
+    "id": 14
+  },
+  {
+    "name": "Zee Gown",
+    "cartegory": "Kids",
+    "price": "$50.50",
+    "img": "item15.png",
+    "id": 15
   }
 ]
