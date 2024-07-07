@@ -63,7 +63,7 @@ const cartItems = [
 
 const Cart = () => {
   return (
-    <div className='bg-gradient-to-b from-pink-200 to-pink-400 px-4 pt-16'>
+    <div className='bg-gradient-to-b from-[#FFFCFB] to-[#FBCDBD] px-4 pt-16'>
       <CartHeader itemCount={cartItems.length} />
       <div className='flex justify-center items-center gap-8 md:pb-12'>
         <ProductList items={items} />
