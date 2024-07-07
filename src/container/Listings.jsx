@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaStar,
+  FaRegStar,
+  FaRegHeart,
+} from "react-icons/fa";
 import item1 from "../assets/item1.png";
 import item2 from "../assets/item2.png";
 import item3 from "../assets/item3.png";
@@ -25,45 +31,95 @@ const items = itemData;
 
 const Listings = () => {
   return (
-    <div className='flex flex-col justify-center items-center bg-gradient-to-b from-pink-200 to-pink-400 px-3 md:px-10 py-4 md:py-10'>
-      <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
+    <div className='flex flex-col items-center bg-gradient-to-b from-pink-200 to-pink-400 pt-4  pb-40 md:px-24 py-12 md:py-16'>
+      <div className='grid grid-cols-2 md:grid-cols-3 gap-x-[214px] gap-y-[149px]'>
         {items.map((item) => (
-          <div key={item.id} className='w-[193px] md:w-[300px] p-4'>
-            <img
-              src={imageMap[item.img]}
-              alt={item.name}
-              className='w-full h-48 object-contain'
-            />
-            <p className='text-gray-700 font-bold mt-2'>{item.name}</p>
-            <p className='text-gray-500 text-sm'>{item.cartegory}</p>
-            <p className='text-blue-500 font-bold'>{item.price}</p>
-            <button className='bg-white px-4 py-2 shadow-md w-full'>
+          <div key={item.id} className='w-[193px] h-[32opx] md:w-[300px]'>
+            <div className='shadow-md'>
+              <img
+                src={imageMap[item.img]}
+                alt={item.name}
+                className='w-full h-48 object-fill'
+              />
+            </div>
+            <div className='text-base font-normal'>
+              <p>{item.name}</p>
+              <p>{item.cartegory}</p>
+              <p className='text-[#4670DC] font-bold '>{item.price}</p>
+            </div>
+            <div className='flex justify-between my-2 md:my-1'>
+              <div className='flex'>
+                <FaStar
+                  size={24}
+                  color='#F68B1E'
+                  style={{
+                    filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+                  }}
+                />
+                <FaStar
+                  size={24}
+                  color='#F68B1E'
+                  style={{
+                    filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+                  }}
+                />
+                <FaStar
+                  size={24}
+                  color='#F68B1E'
+                  style={{
+                    filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+                  }}
+                />
+                <FaRegStar
+                  size={24}
+                  color='#F68B1E'
+                  style={{
+                    filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+                  }}
+                />
+                <FaRegStar
+                  size={24}
+                  color='#F68B1E'
+                  style={{
+                    filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+                  }}
+                />
+              </div>
+              <FaRegHeart
+                size={24}
+                color='#EC0000'
+                style={{
+                  filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+                }}
+              />
+            </div>
+            <button className='bg-white px-4 py-2 shadow-md w-full font-bold text-xs border border-[#171717]'>
               + ADD
             </button>
           </div>
         ))}
       </div>
-      <div className='flex justify-center items-center mt-10'>
-        <FaChevronLeft className='text-gray-700 mr-4 hover:text-pink-400' />
+      <div className='flex justify-center items-center mt-56'>
+        <FaChevronLeft className='text-black mr-20 ' size={24} />
         <div className='flex items-end gap-5'>
-          <Link className='flex items-center justify-center rounded-full w-8 h-8 bg-blue-500 font-bold'>
+          <Link className='flex items-center justify-center rounded-full w-10 h-10 bg-[#D7CECE80] font-bold'>
             1
           </Link>
-          <Link className='flex items-center justify-center rounded-full w-8 h-8 bg-white font-bold'>
+          <Link className='flex items-center justify-center rounded-full w-10 h-10 bg-[#D7CECE80] font-bold'>
             2
           </Link>
-          <Link className='flex items-center justify-center rounded-full w-8 h-8 bg-white font-bold'>
+          <Link className='flex items-center justify-center rounded-full w-10 h-10 bg-[#4670DC] font-bold'>
             3
           </Link>
-          <Link className='flex items-center justify-center rounded-full w-8 h-8 bg-white font-bold'>
+          <Link className='flex items-center justify-center rounded-full w-10 h-10 bg-[#D7CECE80] font-bold'>
             4
           </Link>
           <p>...</p>
-          <Link className='flex items-center justify-center rounded-full w-8 h-8 bg-white font-bold'>
-            10
+          <Link className='flex items-center justify-center rounded-full w-10 h-10 bg-[#D7CECE80] font-bold'>
+            5
           </Link>
         </div>
-        <FaChevronRight className='text-gray-700 ml-4 hover:text-pink-400' />
+        <FaChevronRight className='text-black ml-20 ' size={24} />
       </div>
     </div>
   );
