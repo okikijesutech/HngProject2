@@ -1,7 +1,29 @@
 import React from "react";
+import CheckoutListing from "../container/CheckoutListing";
+import OrderSummary from "../components/OrderSummary";
 
 const CheckOut = () => {
-  return <div>CheckOut</div>;
+  return (
+    <div className='bg-gradient-to-b from-pink-200 to-pink-400 px-4 pt-16'>
+      <CheckoutListing />
+      <div className='flex flex-col-reverse md:flex-col-reverse lg:flex-row'>
+        <div className='flex flex-col md:flex-row lg:flex-col mt-16 lg:mt-0 text-base font-bold'>
+          <button className='bg-[white] px-4 py-2 mx-auto w-[175px] md:w-[300px]'>
+            Delivery Details
+          </button>
+          <button className='bg-[white] px-4 py-2 mx-auto w-[175px] md:w-[300px] mt-16'>
+            Payment <span className='hidden md:block'>Details</span>
+          </button>
+        </div>
+        <OrderSummary />
+      </div>
+      <div className='flex items-center mt-48 md:mt-52 lg:mt-12 pb-16 md:pb-12 lg:pb-8'>
+        <button className='bg-[#4670DC] text-white px-4 py-3 mx-auto w-[300px] md:w-[530px] text-base md:text-xl lg:text-2xl font-bold  '>
+          ORDER
+        </button>
+      </div>
+    </div>
+  );
 };
 
 export default CheckOut;

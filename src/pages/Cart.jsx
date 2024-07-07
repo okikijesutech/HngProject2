@@ -14,6 +14,7 @@ import item5 from "../assets/item5.png";
 import item6 from "../assets/ZeeG.png";
 import coporate from "../assets/corporate.png";
 import "./cart.css";
+import OrderSummary from "../components/OrderSummary";
 
 const images = [item1, item2, item3];
 
@@ -215,25 +216,7 @@ const Cart = () => {
               }}
             />
           </div>
-          <div className='border border-black rounded-lg px-4 py-2 mx-auto w-[340px] md:w-auto'>
-            <h3 className='text-base font-medium md:font-bold mb-2'>
-              Order Summary
-            </h3>
-            <table className='mx-0 md:mx-auto'>
-              <tr className='text-xs font-normal mb-1'>
-                <td className='pr-[200px]'>Subtotal</td>
-                <td>$296.00</td>
-              </tr>
-              <tr className='text-xs font-normal mb-2'>
-                <td>Estimated Shipping</td>
-                <td>$50.00</td>
-              </tr>
-              <tr className='font-bold text-xs'>
-                <td>ORDER TOTAL</td>
-                <td>$346.00</td>
-              </tr>
-            </table>
-          </div>
+          <OrderSummary />
           <button className='bg-gray-600 text-white px-4 py-2 mx-auto w-[300px] mt-2'>
             <Link to='/checkout'>CHECK OUT</Link>
           </button>
