@@ -32,7 +32,7 @@ const items = itemData;
 const Listings = () => {
   return (
     <div className='flex flex-col items-center bg-gradient-to-b from-pink-200 to-pink-400 pt-4  pb-40 md:px-24 py-12 md:py-16'>
-      <div className='grid grid-cols-2 md:grid-cols-3 gap-x-[214px] gap-y-[149px]'>
+      <div className='grid grid-cols-2 md:grid-cols-3 gap-x-[16px] gap-y-[92px] md:gap-x-[214px] md:gap-y-[149px]'>
         {items.map((item) => (
           <div key={item.id} className='w-[193px] h-[32opx] md:w-[300px]'>
             <div className='shadow-md'>

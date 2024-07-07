@@ -8,7 +8,7 @@ import { HiBars4 } from "react-icons/hi2";
 
 const Navbar = () => {
   return (
-    <div className='flex items-center justify-between px-[99px] md:px-[100px] bg-black md:bg-white'>
+    <div className='flex items-center justify-between px-[14px] md:px-[100px] bg-black md:bg-white'>
       <div className='flex flex-row-reverse md:flex-row items-center'>
         <div className='ml-[150px] md:ml-0 w-[75px] h-[45px] md:w-[150px] md:h-[90px]'>
           <Link to='/'>

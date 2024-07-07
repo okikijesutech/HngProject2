@@ -1,6 +1,12 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import { FaChevronCircleRight, FaChevronCircleLeft } from "react-icons/fa";
+import {
+  FaChevronCircleRight,
+  FaChevronCircleLeft,
+  FaStar,
+  FaRegStar,
+  FaRegHeart,
+} from "react-icons/fa";
 import item1 from "../assets/item1.png";
 import item2 from "../assets/item2.png";
 import item3 from "../assets/item3.png";
@@ -76,7 +82,7 @@ const Cart = () => {
   return (
     <div className='bg-gradient-to-b from-pink-200 to-pink-400 px-4 pt-16'>
       <div className='flex items-center mx-0 md:mx-[200px] mb-3 md:mb-6 pb-1 md:pb-6 border-b border-black'>
-        <h2 className='font-medium text-xl md:text-2xl mr-[345px] md:mr-[400px]'>
+        <h2 className='font-medium text-xl md:text-2xl mr-[275px] md:mr-[400px]'>
           CART
         </h2>
         <p className='font-bold text-sm'>3 items</p>
@@ -93,11 +99,59 @@ const Cart = () => {
                 />
               </div>
               <div className='w-[150px]'>
-                <p className=' font-bold mt-2'>{item.name}</p>
-                <p className='text-sm'>{item.cartegory}</p>
-                <p className='text-[#4670DC] font-bold'>{item.price}</p>
+                <div className='text-base font-normal'>
+                  <p>{item.name}</p>
+                  <p>{item.cartegory}</p>
+                  <p className='text-[#4670DC] font-bold '>{item.price}</p>
+                </div>
+                <div className='flex justify-between my-2 md:my-1'>
+                  <div className='flex'>
+                    <FaStar
+                      size={24}
+                      color='#F68B1E'
+                      style={{
+                        filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+                      }}
+                    />
+                    <FaStar
+                      size={24}
+                      color='#F68B1E'
+                      style={{
+                        filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+                      }}
+                    />
+                    <FaStar
+                      size={24}
+                      color='#F68B1E'
+                      style={{
+                        filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+                      }}
+                    />
+                    <FaRegStar
+                      size={24}
+                      color='#F68B1E'
+                      style={{
+                        filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+                      }}
+                    />
+                    <FaRegStar
+                      size={24}
+                      color='#F68B1E'
+                      style={{
+                        filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+                      }}
+                    />
+                  </div>
+                  <FaRegHeart
+                    size={24}
+                    color='#EC0000'
+                    style={{
+                      filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+                    }}
+                  />
+                </div>
 
-                <button className='bg-white px-4 py-2 shadow-md w-full'>
+                <button className='bg-white px-4 py-2 shadow-md w-full border border-[#171717]'>
                   + ADD
                 </button>
               </div>
