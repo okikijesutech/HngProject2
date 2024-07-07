@@ -3,7 +3,7 @@ import CartItem from "./CartItem";
 
 const CartItemList = ({ cartItems }) => {
   return (
-    <div className='flex flex-col gap-4 '>
+    <div className='flex flex-col gap-4'>
       {cartItems.map((item) => (
         <CartItem key={item.name} item={item} />
       ))}

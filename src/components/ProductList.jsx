@@ -3,21 +3,21 @@ import { FaStar, FaRegStar, FaRegHeart } from "react-icons/fa";
 
 const ProductList = ({ items }) => {
   return (
-    <div className='hidden md:flex flex-col gap-4 border-r border-black pr-2'>
+    <div className='hidden md:flex flex-col gap-4 border-r border-black pr-4'>
       {items.map((item) => (
-        <div key={item.name} className='w-[321px] md:w-[500px] p-4 flex'>
-          <div className='w-[100px] md:w-[300px]'>
+        <div key={item.name} className='w-full p-4 flex'>
+          <div className='w-[100px] md:w-[200px]'>
             <img
               src={item.img}
               alt={item.name}
-              className='w-full h-48 object-contain'
+              className='w-full h-48 object-fill'
             />
           </div>
-          <div className='w-[200px]'>
+          <div className='w-full pl-4'>
             <div className='text-base font-normal'>
               <p>{item.name}</p>
               <p>{item.cartegory}</p>
-              <p className='text-[#4670DC] font-bold '>{item.price}</p>
+              <p className='text-[#4670DC] font-bold'>{item.price}</p>
             </div>
             <div className='flex justify-between my-2 md:my-1'>
               <div className='flex'>
@@ -35,7 +35,7 @@ const ProductList = ({ items }) => {
           </div>
         </div>
       ))}
-      <button className='bg-blue-600 text-white px-4 py-2 mx-auto w-[300px] mt-[150px]'>
+      <button className='bg-[#D7CECE80] text-white px-4 py-2 mx-auto mt-10 w-full'>
         Add More
       </button>
     </div>
