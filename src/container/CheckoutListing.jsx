@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FaXmark, FaChevronLeft } from "react-icons/fa6";
 import item1 from "../assets/item1.png";
 import item3 from "../assets/item3.png";
@@ -32,10 +33,15 @@ const cartItems = [
 ];
 
 const CheckoutListing = () => {
+  const navigate = useNavigate();
   return (
     <div className='p-6'>
       <div className='flex lg:block '>
-        <FaChevronLeft size={24} className=' lg:hidden mr-28 md:mr-8' />
+        <FaChevronLeft
+          size={24}
+          className=' lg:hidden mr-28 md:mr-8'
+          onClick={() => navigate(-1)}
+        />
         <h1 className='font-helvetica font-bold text-40 leading-46 text-center mb-4 md:text-left lg:text-center md:text-2xl lg:text-4xl md:leading-46'>
           Review your items
         </h1>

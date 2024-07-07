@@ -8,10 +8,10 @@ const CheckOut = () => {
       <CheckoutListing />
       <div className='flex flex-col-reverse md:flex-col-reverse lg:flex-row lg:gap-[225px] mt-14 md:mt-36 lg:mt-24 px-[14px] md:px-[33px]'>
         <div className='flex flex-col md:flex-row lg:flex-col mt-16 lg:mt-0 text-base font-bold'>
-          <button className='bg-[white] px-4 py-2 mx-auto w-[175px] md:w-[300px] lg:w-[391px]'>
+          <button className='bg-[white] px-4 py-2 mx-auto w-[175px] md:w-[300px] lg:w-[391px] rounded-md'>
             Delivery Details
           </button>
-          <button className='bg-[white] px-4 py-2 mx-auto w-[175px] md:w-[300px] lg:w-[391px] mt-16 md:mt-0 lg:mt-16'>
+          <button className='bg-[white] px-4 py-2 mx-auto w-[175px] md:w-[300px] lg:w-[391px] mt-16 md:mt-0 lg:mt-16 rounded-md'>
             Payment <span className='hidden md:inline'>Details</span>
           </button>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 const OrderSummary = () => {
   return (
-    <div className='border border-black rounded-lg px-4 py-2 mx-auto'>
+    <div className='border border-black rounded-[3px] px-4 py-2 mx-auto'>
       <h3 className='font-medium md:font-bold mb-2'>Order Summary</h3>
       <table className='w-full'>
         <tbody>
