@@ -4,7 +4,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Promotion = () => {
   return (
-    <div className='flex justify-between items-center bg-white md:bg-black md:text-white py-3 pl-[90px] md:pl-[300px] lg:pl-[600px]  pr-[60px]'>
+    <div className='flex justify-between items-center bg-white md:bg-black md:text-white py-3 pl-[130px] md:pl-[300px] lg:pl-[600px]  pr-[60px]'>
       <div className='flex gap-[21px] md:gap-[50px] items-center'>
         <FaChevronLeft size={12} className='cursor-pointer' />
         <p className='text-xs md:text-xl font-medium'>

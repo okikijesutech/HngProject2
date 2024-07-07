@@ -74,9 +74,11 @@ const Cart = () => {
             <div className='w-full md:w-[340px] text-xs mt-[39px]'>
               <OrderSummary />
             </div>
-            <button className='bg-gray-600 text-white px-4 py-2 mx-auto w-full md:w-[300px] mt-[45px] md:mt-[40px]'>
-              <Link to='/checkout'>CHECK OUT</Link>
-            </button>
+            <Link to='/checkout'>
+              <button className='bg-gray-600 text-white px-4 py-2 mx-auto w-full md:w-[300px] mt-[45px] md:mt-[40px]'>
+                CHECK OUT
+              </button>
+            </Link>
           </div>
         </div>
       </div>

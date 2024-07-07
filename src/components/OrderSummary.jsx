@@ -6,7 +6,7 @@ const OrderSummary = () => {
       <h3 className='font-medium md:font-bold mb-2'>Order Summary</h3>
       <table className='mx-0 md:mx-auto'>
         <tr className='font-normal mb-1'>
-          <td className='pr-[200px]'>Subtotal</td>
+          <td className='pr-[100px] md:pr-[200px]'>Subtotal</td>
           <td>$296.00</td>
         </tr>
         <tr className='font-normal mb-2'>
