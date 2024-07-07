@@ -70,12 +70,14 @@ const Cart = () => {
         <div>
           <CartItemList cartItems={cartItems} />
           <MobileCarousel images={images} />
-          <div className='w-[340px] text-xs'>
-            <OrderSummary />
+          <div className='px-[39px]'>
+            <div className='w-full md:w-[340px] text-xs mt-[39px]'>
+              <OrderSummary />
+            </div>
+            <button className='bg-gray-600 text-white px-4 py-2 mx-auto w-full md:w-[300px] mt-[45px] md:mt-[40px]'>
+              <Link to='/checkout'>CHECK OUT</Link>
+            </button>
           </div>
-          <button className='bg-gray-600 text-white px-4 py-2 mx-auto w-[300px] mt-2'>
-            <Link to='/checkout'>CHECK OUT</Link>
-          </button>
         </div>
       </div>
       <CartFooter />
