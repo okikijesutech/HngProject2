@@ -2,8 +2,8 @@ import React from "react";
 
 const OrderSummary = () => {
   return (
-    <div className='border border-black rounded-[3px] px-4 py-2 mx-auto'>
-      <h3 className='font-medium md:font-bold mb-2'>Order Summary</h3>
+    <div className='border border-black rounded-[3px] px-4 py-2 mx-auto font-Helvetica'>
+      <h3 className='font-custom-weight md:font-bold mb-2'>Order Summary</h3>
       <table className='w-full'>
         <tbody>
           <tr className='font-normal mb-1'>

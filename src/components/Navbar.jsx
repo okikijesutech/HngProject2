@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className='flex items-center justify-between px-[14px] md:px-[100px] bg-[#171717] md:bg-white'>
+    <div className='flex items-center justify-between px-[14px] md:px-[100px] bg-[#171717] md:bg-white font-SansSerifFLF '>
       <div className='flex flex-row-reverse md:flex-row items-center'>
         <div className='ml-[150px] md:ml-0 w-[75px] h-[45px] md:w-[150px] md:h-[90px]'>
           <Link to='/'>
@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className='flex md:hidden text-white' onClick={toggleMenu}>
           {menuOpen ? <HiX size={24} /> : <HiOutlineMenu size={24} />}
         </div>
-        <ul className='hidden md:flex text-base ml-[92px]'>
+        <ul className='hidden md:flex text-base font-medium ml-[92px]'>
           <li className='border-r-2 border-black px-2'>
             <Link to='/'>MEN</Link>
           </li>

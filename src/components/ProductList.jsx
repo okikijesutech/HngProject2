@@ -3,10 +3,10 @@ import { FaStar, FaRegStar, FaRegHeart } from "react-icons/fa";
 
 const ProductList = ({ items }) => {
   return (
-    <div className='hidden md:flex flex-col gap-4 border-r border-black pr-4'>
+    <div className='hidden md:flex flex-col gap-4 border-r border-black pr-4 font-Helvetica'>
       {items.map((item) => (
         <div key={item.name} className='w-full p-4 flex'>
-          <div className='w-[100px] md:w-[200px]'>
+          <div className='w-[100px] md:w-[300px]'>
             <img
               src={item.img}
               alt={item.name}

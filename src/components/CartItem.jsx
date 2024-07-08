@@ -10,7 +10,7 @@ const CartItem = ({ item }) => {
           className='w-full h-40 object-fill rounded-xl'
         />
       </div>
-      <div className='w-[150px] font-normal text-base '>
+      <div className='w-[150px] font-normal font-Helvetica text-base '>
         <p>{item.name}</p>
         <p>{item.category}</p>
         <p className='font-bold'>{item.Price}</p>

@@ -4,7 +4,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Roboto", "ui-sans-serif", "system-ui"],
+        SansSerifBookFLF: ["SansSerifBookFLF", "sans-serif"],
+        SansSerifFLF: ['"SansSerifFLF"', "sans-serif"],
+        HelveticaRounded: ['"Helvetica Rounded"', "sans-serif"],
+        SansSerifBldFLF: ['"SansSerifBldFLF"', "sans-serif"],
+        SansSerifExbFLF: ['"SansSerifExbFLF"', "sans-serif"],
+        Helvetica: ['"Helvetica"', "sans-serif"],
+      },
+      fontWeight: {
+        "custom-weight": "550px",
       },
     },
   },

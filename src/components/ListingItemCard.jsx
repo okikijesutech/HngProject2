@@ -4,7 +4,7 @@ import { FaStar, FaRegStar, FaRegHeart } from "react-icons/fa";
 
 const ListingItemCard = ({ item, imageMap }) => {
   return (
-    <div className='w-[193px] h-[320px] md:w-[250px] lg:w-[300px]'>
+    <div className='w-[193px] h-[320px] md:w-[250px] lg:w-[300px] font-Helvetica'>
       <div className='shadow-md'>
         <img
           src={imageMap[item.img]}
@@ -47,7 +47,7 @@ const ListingItemCard = ({ item, imageMap }) => {
           style={{ filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))" }}
         />
       </div>
-      <Link>
+      <Link to='/cart'>
         <button className='bg-white px-4 py-2 shadow-md w-full font-bold text-xs border border-[#171717]'>
           + ADD
         </button>

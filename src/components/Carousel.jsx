@@ -43,26 +43,26 @@ const Carousel = ({ slides }) => {
             backgroundPosition: "center",
           }}
         >
-          <div className='h-full flex flex-col py-[230px] md:py-[289px] text-center justify-center items-center'>
-            <h1 className='mb-4 text-xl font-semibold md:text-5xl md:font-medium w-[90%] md:w-[1088px]'>
+          <div className='h-full flex flex-col py-[230px] md:pt-[400px] text-center justify-center items-center'>
+            <h1 className='mb-4 text-xl font-SansSerifExbFLF font-semibold md:text-5xl md:font-custom-weight w-[90%] md:w-[1088px]'>
               {slide.heading}
               <span className='hidden md:block'>{slide.subheading}</span>
             </h1>
-            <p className='mb-4 text-xs md:text-2xl font-bold w-[90%] md:w-[530px]'>
+            <p className='mb-4 text-xs md:text-2xl font-HelveticaRounded font-bold w-[90%] md:w-[530px]'>
               {slide.description}
             </p>
-            <button className='bg-white text-black p-3 text-xs md:text-2xl font-medium w-[110px] md:w-[300px]'>
+            <button className='bg-white text-black p-3 text-xs md:text-2xl font-SansSerifExbFLF font-custom-weight w-[110px] md:w-[300px]'>
               {slide.buttonText}
             </button>
           </div>
         </div>
       ))}
 
-      <div className='absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2'>
+      <div className='absolute  bottom-5 left-1/2 transform -translate-x-1/2 hidden md:flex  space-x-2'>
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`w-3 h-3 rounded-full ${
+            className={`w-5 h-5 rounded-full ${
               index === currentIndex ? "bg-[#4670DC]" : "bg-[#FFFFFF]"
             }`}
             onClick={() => goToSlide(index)}

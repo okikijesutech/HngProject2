@@ -75,10 +75,10 @@ const Header = () => {
   return (
     <div>
       <div className='px-[15px] md:px-[100px]'>
-        <p className='text-2xl font-bold mt-10 md:mt-6'>
+        <p className='text-2xl font-bold font-HelveticaRounded mt-10 md:mt-6'>
           <span className='text-[#00000080]'>Home/</span>Shop
         </p>
-        <div className='flex items-center p-1 border border-black w-[191px] md:w-[356px] mt-4 md:mt-14 text-xs md:text-2xl font-bold'>
+        <div className='flex items-center p-1 border border-black w-[191px] md:w-[356px] mt-4 md:mt-14 text-xs md:text-2xl font-bold font-HelveticaRounded'>
           <CgSortAz size={24} />
           <p className='mr-2 '>Sort</p>
           <div className='border-black border-l-2'>
@@ -95,8 +95,10 @@ const Header = () => {
             </select>
           </div>
         </div>
-        <div className='bg-[#4670DC] w-[105px] md:w-[150px] text-white p-2 rounded-tl-md rounded-tr-md rounded-bl-md md:mx-auto mt-9 flex items-center'>
-          <p className='font-medium text-base md:text-2xl'>New Arrivals</p>
+        <div className='bg-[#4670DC] w-[105px] md:w-[160px] text-white p-2 rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] md:mx-auto mt-9 flex items-center'>
+          <p className='font-custom-weight font-SansSerifBldFLF text-base md:text-2xl'>
+            New Arrivals
+          </p>
         </div>
       </div>
       <Carousel slides={slides} />

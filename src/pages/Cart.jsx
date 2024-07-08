@@ -63,7 +63,7 @@ const cartItems = [
 
 const Cart = () => {
   return (
-    <div className='bg-gradient-to-b from-[#FFFCFB] to-[#FBCDBD] px-4 pt-16'>
+    <div className='bg-gradient-to-b from-[#FFFCFB] to-[#FBCDBD] px-4 pt-16 font-Helvetica'>
       <CartHeader itemCount={cartItems.length} />
       <div className='flex flex-col md:flex-row justify-center items-center gap-8 md:pb-12'>
         <ProductList items={items} />
@@ -75,7 +75,7 @@ const Cart = () => {
               <OrderSummary />
             </div>
             <Link to='/checkout'>
-              <button className='bg-[#4670DC] text-white px-4 py-2 mx-auto w-full mt-4 md:mt-[40px]'>
+              <button className='bg-[#4670DC] text-white font-Helvetica font-bold text-xl px-4 py-2 mx-auto w-full mt-4 md:mt-[40px]'>
                 CHECK OUT
               </button>
             </Link>

@@ -1,15 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=SansSerifBookFLF:wght@400;550&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=SansSerifFLF:wght@400;550&family=Helvetica+Rounded:wght@400;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* src/index.css */
-@font-face {
-  font-family: "SansSerifBookFLF";
-  src: url("./assets/fonts/SansSerifBookFLF.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-body {
-  font-family: "SansSerifBookFLF", sans-serif;
-}

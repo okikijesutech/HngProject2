@@ -14,7 +14,7 @@ const Listings = () => {
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Check the screen size on initial render
+    handleResize();
 
     return () => {
       window.removeEventListener("resize", handleResize);

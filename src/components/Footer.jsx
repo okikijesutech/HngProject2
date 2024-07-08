@@ -50,10 +50,12 @@ const Footer = () => {
   const renderSection = (title, items) => (
     <div>
       <div
-        className='flex justify-between items-center px-3 md:px-0 py-2 md:py-0 border border-gray-500 md:border-none cursor-pointer'
+        className='flex justify-between items-center px-3 md:px-0 py-2 md:py-0 border border-gray-500 md:border-none cursor-pointer md:cursor-default'
         onClick={() => toggleVisibility(title)}
       >
-        <h4 className='text-base md:text-sm font-medium mb-3'>{title}</h4>
+        <h4 className='text-base md:text-sm font-custom-weight font-SansSerifExbFLF mb-3'>
+          {title}
+        </h4>
         {visibleSection === title ? (
           <FaChevronUp size={24} className='block md:hidden' />
         ) : (
@@ -62,17 +64,12 @@ const Footer = () => {
       </div>
       {(visibleSection === title || window.innerWidth >= 768) && (
         <ul
-          className={`text-sm font-normal leading-4 text-left space-y-2 bg-[#1E1E1E] p-4 rounded-md ${
+          className={`text-sm font-normal font-Helvetica leading-4 text-left space-y-2 bg-[#1E1E1E] md:bg-[#171717] p-4 md:p-0 rounded-md md:rounded-none ${
             visibleSection === title ? "block" : "hidden"
           } md:block`}
         >
           {items.map((item, index) => (
-            <li
-              key={index}
-              className='hover:text-[#FF9F3D] transition-colors duration-300'
-            >
-              {item}
-            </li>
+            <li key={index}>{item}</li>
           ))}
         </ul>
       )}
@@ -83,31 +80,31 @@ const Footer = () => {
     <div className='bg-[#171717] text-white px-5 pt-10 md:px-[95px] pb-[20px] md:py-[60px]'>
       <div className='flex gap-4 pb-10 md:pb-[70px] md:border-b-2 md:border-white'>
         <div className='flex flex-col items-center text-center'>
-          <h3 className='font-medium text-base md:text-xl'>
+          <h3 className='font-custom-weight font-SansSerifExbFLF text-base md:text-xl'>
             JOIN OUR EMAIL LIST
           </h3>
-          <p className='text-xs md:text-base font-normal mt-4'>
+          <p className='text-xs md:text-base font-normal font-Helvetica mt-4'>
             Receive products news and updates in your inbox
           </p>
           <input
             type='text'
             placeholder='Enter your email address'
-            className='w-full px-4 py-2 mt-3 text-base font-normal'
+            className='w-full px-4 py-2 mt-3 text-base font-normal font-Helvetica'
           />
           <div className='flex md:hidden w-[390px] items-start mt-8 '>
             <input type='checkbox' className='mt-[5px] mr-2' />
-            <p className='text-left text-xs font-normal'>
+            <p className='text-left text-xs font-normal font-Helvetica'>
               I acknowledge I have read and understood the Privacy Policy and I
               consent to the processing of my personal data for marketing and
               profiling purposes.
             </p>
           </div>
-          <button className='bg-white px-4 py-2 text-[#4670DC] text-xs md:text-base font-medium mt-4 w-[100px]'>
+          <button className='bg-white px-4 py-2 text-[#4670DC] text-xs md:text-base font-custom-weight font-SansSerifFLF mt-4 w-[100px]'>
             SIGN UP
           </button>
         </div>
         <div className='hidden md:flex ml-10 mt-28 w-[425px]'>
-          <p>
+          <p className='font-Helvetica font-normal text-sm'>
             <input
               type='checkbox'
               className='mr-2 bg-transparent border border-black'
@@ -122,7 +119,7 @@ const Footer = () => {
         {sections.map(({ title, items }) => renderSection(title, items))}
       </div>
       <div className='flex flex-col md:flex-row items-start md:items-center justify-between mt-16 md:mt-10'>
-        <div className='flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-16 mb-10 text-sm md:text-base font-medium'>
+        <div className='flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-16 mb-10 text-sm md:text-base font-SansSerifFLF font-custom-weight'>
           <button className='border-solid border-2 p-[10px] border-[#FF9F3D] text-[#FF9f3D] text-sm mb-8 md:mb-0'>
             Cookie Preference
           </button>
