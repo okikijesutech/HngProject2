@@ -8,13 +8,13 @@ const MainLayout = () => {
   const location = useLocation();
 
   const isCheckoutPage = location.pathname === "/checkout";
-  const isDesktopView = () => window.innerWidth > 768;
+  const isDesktopView = () => window.innerWidth > 430;
 
   return (
     <>
       <ScrollToTop />
       <div className='flex flex-col-reverse md:flex-col'>
-        {!isCheckoutPage && isDesktopView() && <Promotion />}
+        <Promotion />
         <Navbar />
       </div>
       <Outlet />

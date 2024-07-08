@@ -2,8 +2,56 @@ import React, { useState, useEffect } from "react";
 import { CgSortAz } from "react-icons/cg";
 import heroImage from "../assets/HeroImg.png";
 import heroImageMobile from "../assets/HeroImgMobile.png";
+import Carousel from "../components/Carousel";
 
 const options = ["Recommended", "New Arrivals", "Price Low to High"];
+const slides = [
+  {
+    smallImage: heroImageMobile,
+    largeImage: heroImage,
+    heading: "GET 50% OFF YOUR FIRST ORDER",
+    subheading: "WHEN YOU ORDER MORE THAN SEVEN ITEMS",
+    description:
+      "Save from the comfort of your home, any day, everywhere. Online only. Prices are marked.",
+    buttonText: "SHOP NOW",
+  },
+  {
+    smallImage: heroImageMobile,
+    largeImage: heroImage,
+    heading: "GET 50% OFF YOUR FIRST ORDER",
+    subheading: "WHEN YOU ORDER MORE THAN SEVEN ITEMS",
+    description:
+      "Save from the comfort of your home, any day, everywhere. Online only. Prices are marked.",
+    buttonText: "SHOP NOW",
+  },
+  {
+    smallImage: heroImageMobile,
+    largeImage: heroImage,
+    heading: "GET 50% OFF YOUR FIRST ORDER",
+    subheading: "WHEN YOU ORDER MORE THAN SEVEN ITEMS",
+    description:
+      "Save from the comfort of your home, any day, everywhere. Online only. Prices are marked.",
+    buttonText: "SHOP NOW",
+  },
+  {
+    smallImage: heroImageMobile,
+    largeImage: heroImage,
+    heading: "GET 50% OFF YOUR FIRST ORDER",
+    subheading: "WHEN YOU ORDER MORE THAN SEVEN ITEMS",
+    description:
+      "Save from the comfort of your home, any day, everywhere. Online only. Prices are marked.",
+    buttonText: "SHOP NOW",
+  },
+  {
+    smallImage: heroImageMobile,
+    largeImage: heroImage,
+    heading: "GET 50% OFF YOUR FIRST ORDER",
+    subheading: "WHEN YOU ORDER MORE THAN SEVEN ITEMS",
+    description:
+      "Save from the comfort of your home, any day, everywhere. Online only. Prices are marked.",
+    buttonText: "SHOP NOW",
+  },
+];
 
 const Header = () => {
   const [selectedValue, setSelectedValue] = useState(options[0]);
@@ -51,28 +99,7 @@ const Header = () => {
           <p className='font-medium text-base md:text-2xl'>New Arrivals</p>
         </div>
       </div>
-      <div
-        className='h-[10vh] md:h-[85vh] relative overflow-hidden text-white flex flex-col py-[289px] text-center justify-center items-center mt-3'
-        style={{
-          backgroundImage: `url(${isMobile ? heroImageMobile : heroImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: isMobile ? "top" : "center",
-        }}
-      >
-        <h1 className='mb-4 text-xl font-semibold md:text-5xl md:font-medium w-[90%] md:w-[1088px]'>
-          GET 50% OFF YOUR FIRST ORDER{" "}
-          <span className='hidden md:block'>
-            WHEN YOU ORDER MORE THAN SEVEN ITEMS
-          </span>
-        </h1>
-        <p className='mb-4 text-xs md:text-2xl font-bold w-[90%] md:w-[530px]'>
-          Save from the comfort of your home, any day, everywhere. Online only.
-          Prices are marked.
-        </p>
-        <button className='bg-white text-black p-3 text-xs md:text-2xl font-medium w-[90%] md:w-[300px]'>
-          SHOP NOW
-        </button>
-      </div>
+      <Carousel slides={slides} />
     </div>
   );
 };

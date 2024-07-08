@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaStar, FaRegStar, FaRegHeart } from "react-icons/fa";
 
 const ListingItemCard = ({ item, imageMap }) => {
@@ -8,7 +9,7 @@ const ListingItemCard = ({ item, imageMap }) => {
         <img
           src={imageMap[item.img]}
           alt={item.name}
-          className='w-full h-48 object-fill'
+          className='w-full h-40 md:h-48 object-fill'
         />
       </div>
       <div className='text-base font-normal'>
@@ -46,9 +47,11 @@ const ListingItemCard = ({ item, imageMap }) => {
           style={{ filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))" }}
         />
       </div>
-      <button className='bg-white px-4 py-2 shadow-md w-full font-bold text-xs border border-[#171717]'>
-        + ADD
-      </button>
+      <Link>
+        <button className='bg-white px-4 py-2 shadow-md w-full font-bold text-xs border border-[#171717]'>
+          + ADD
+        </button>
+      </Link>
     </div>
   );
 };
