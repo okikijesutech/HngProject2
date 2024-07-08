@@ -1,6 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { FaXmark, FaChevronLeft } from "react-icons/fa6";
+import { FaXmark } from "react-icons/fa6";
 import item1 from "../assets/item1.png";
 import item3 from "../assets/item3.png";
 import item6 from "../assets/ZeeG.png";
@@ -33,23 +32,12 @@ const cartItems = [
 ];
 
 const CheckoutListing = () => {
-  const navigate = useNavigate();
   return (
-    <div className='p-6'>
-      <div className='flex lg:block '>
-        <FaChevronLeft
-          size={24}
-          className=' lg:hidden mr-28 md:mr-8'
-          onClick={() => navigate(-1)}
-        />
-        <h1 className='font-helvetica font-bold text-40 leading-46 text-center mb-4 md:text-left lg:text-center md:text-2xl lg:text-4xl md:leading-46'>
-          Review your items
-        </h1>
-      </div>
-      <hr className='border-black mb-6' />
-      <table className='w-full border-collapse font-helvetica text-24 font-bold leading-27.6 text-left'>
+    <div className='p-4'>
+      <hr className='border-black mb-4' />
+      <table className='w-full border-collapse font-helvetica text-base md:text-lg lg:text-xl font-bold leading-tight text-left'>
         <thead>
-          <tr className='border-b border-black text-xs md:text-2xl font-bold'>
+          <tr className='border-b border-black text-xs md:text-base lg:text-lg font-bold'>
             <th></th>
             <th></th>
             <th>Name</th>
@@ -62,16 +50,16 @@ const CheckoutListing = () => {
           {cartItems.map((item) => (
             <tr
               key={item.name}
-              className='border-b border-black text-xs md:text-2xl lg:text-4xl font-normal'
+              className='border-b border-black text-xs md:text-base lg:text-lg font-normal'
             >
               <td className='text-red-500'>
-                <FaXmark />
+                <FaXmark size={14} />
               </td>
               <td>
                 <img
                   src={item.img}
                   alt={item.name}
-                  className='w-8 h-8 md:w-24 md:h-24 lg:w-40 lg:h-40 object-contain rounded-lg'
+                  className='w-8 h-8 md:w-16 md:h-16 lg:w-24 lg:h-24 object-contain rounded-lg'
                 />
               </td>
               <td>{item.name}</td>

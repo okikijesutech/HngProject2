@@ -1,10 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { FaStar, FaRegStar, FaRegHeart } from "react-icons/fa";
+import React, { useContext } from "react";
+import { FaStar, FaRegStar, FaHeart, FaRegHeart } from "react-icons/fa";
+import { useFavorites } from "../context/FavoritesContext";
+import { useRatings } from "../context/RatingsContext";
 
-const ListingItemCard = ({ item, imageMap }) => {
+const ListingItemCard = ({ item, imageMap, addToCart }) => {
+  const { favorites, toggleFavorite } = useFavorites();
+  const { ratings, rateProduct } = useRatings();
+
+  const isFavorite = favorites.includes(item.id);
+  const itemRating = ratings[item.id] || 0;
+
   return (
-    <div className='w-[193px] h-[320px] md:w-[180px] lg:w-[300px] font-Helvetica'>
+    <div className='w-[193px] h-[320px] md:w-[180px] lg:w-[300px] font-Helvetica p-1 group hover:shadow-lg transition-shadow duration-300'>
       <div className='shadow-md'>
         <img
           src={imageMap[item.img]}
@@ -14,44 +21,70 @@ const ListingItemCard = ({ item, imageMap }) => {
       </div>
       <div className='text-base font-normal'>
         <p>{item.name}</p>
-        <p>{item.cartegory}</p>
+        <p>{item.category}</p>
         <p className='text-[#4670DC] font-bold'>{item.price}</p>
       </div>
       <div className='flex justify-between my-2 md:my-1'>
         <div className='flex'>
-          {Array(3)
-            .fill(
-              <FaStar
-                size={24}
-                color='#F68B1E'
-                style={{
-                  filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
-                }}
-              />
-            )
-            .concat(
-              Array(2).fill(
-                <FaRegStar
-                  size={24}
-                  color='#F68B1E'
-                  style={{
-                    filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
-                  }}
-                />
-              )
-            )}
+          {Array(5)
+            .fill(0)
+            .map((_, index) => (
+              <span
+                key={index}
+                onClick={() => rateProduct(item.id, index + 1)}
+                className='cursor-pointer'
+              >
+                {index < itemRating ? (
+                  <FaStar
+                    size={24}
+                    color='#F68B1E'
+                    style={{
+                      filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+                    }}
+                  />
+                ) : (
+                  <FaRegStar
+                    size={24}
+                    color='#F68B1E'
+                    style={{
+                      filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+                    }}
+                  />
+                )}
+              </span>
+            ))}
         </div>
-        <FaRegHeart
-          size={24}
-          color='#EC0000'
-          style={{ filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))" }}
-        />
+        <span
+          onClick={() => toggleFavorite(item.id)}
+          className='cursor-pointer'
+        >
+          {isFavorite ? (
+            <FaHeart
+              size={24}
+              color='#EC0000'
+              className='group-hover:text-red-600 transition-transform duration-300 ease-in-out transform group-hover:scale-110'
+              style={{
+                filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+              }}
+            />
+          ) : (
+            <FaRegHeart
+              size={24}
+              color='#EC0000'
+              className='group-hover:text-red-600 transition-transform duration-300 ease-in-out transform group-hover:scale-110'
+              style={{
+                filter: "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2))",
+              }}
+            />
+          )}
+        </span>
       </div>
-      <Link to='/cart'>
-        <button className='bg-white px-4 py-2 shadow-md w-full font-bold text-xs border border-[#171717]'>
-          + ADD
-        </button>
-      </Link>
+      <button
+        className='bg-white px-4 py-2 shadow-md w-full font-bold text-xs border border-[#171717]'
+        onClick={() => addToCart(item)}
+      >
+        + ADD
+      </button>
     </div>
   );
 };

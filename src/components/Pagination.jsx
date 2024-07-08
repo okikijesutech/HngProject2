@@ -1,24 +1,82 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const Pagination = () => {
+const Pagination = ({
+  currentPage,
+  itemsPerPage,
+  totalItems,
+  onPageChange,
+}) => {
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  const getDisplayedPages = () => {
+    const totalPages = pageNumbers.length;
+    if (totalPages <= 5) {
+      return pageNumbers;
+    }
+
+    const startPage = Math.max(1, currentPage - 2);
+    const endPage = Math.min(totalPages, currentPage + 2);
+
+    const pages = [];
+
+    if (startPage > 1) {
+      pages.push(1);
+      if (startPage > 2) {
+        pages.push("...");
+      }
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      pages.push(i);
+    }
+
+    if (endPage < totalPages) {
+      if (endPage < totalPages - 1) {
+        pages.push("...");
+      }
+      pages.push(totalPages);
+    }
+
+    return pages;
+  };
+
+  const displayedPages = getDisplayedPages();
+
   return (
     <div className='flex justify-center items-center mt-56 font-HelveticaRounded'>
-      <FaChevronLeft className='text-black mr-12 md:mr-20' size={12} />
+      <FaChevronLeft
+        className={`text-black mr-12 md:mr-20 cursor-pointer ${
+          currentPage === 1 && "opacity-50 cursor-not-allowed"
+        }`}
+        size={12}
+        onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
+      />
       <div className='flex items-end gap-3 md:gap-5'>
-        {[1, 2, 3, 4, "...", 5].map((page, index) => (
-          <Link
+        {displayedPages.map((page, index) => (
+          <div
             key={index}
-            className={`flex items-center justify-center rounded-full w-8 h-8 md:w-10 md:h-10 ${
-              page === 3 ? "bg-[#4670DC]" : "bg-[#D7CECE80]"
-            } font-bold`}
+            onClick={() => page !== "..." && onPageChange(page)}
+            className={`flex items-center justify-center rounded-full w-8 h-8 md:w-10 md:h-10 cursor-pointer ${
+              page === currentPage ? "bg-[#4670DC]" : "bg-[#D7CECE80]"
+            } font-bold ${page === "..." && "cursor-default"}`}
           >
             {page}
-          </Link>
+          </div>
         ))}
       </div>
-      <FaChevronRight className='text-black ml-12 md:ml-20' size={12} />
+      <FaChevronRight
+        className={`text-black ml-12 md:ml-20 cursor-pointer ${
+          currentPage === pageNumbers.length && "opacity-50 cursor-not-allowed"
+        }`}
+        size={12}
+        onClick={() =>
+          currentPage < pageNumbers.length && onPageChange(currentPage + 1)
+        }
+      />
     </div>
   );
 };

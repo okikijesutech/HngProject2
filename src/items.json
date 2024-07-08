@@ -2,106 +2,316 @@
   {
     "name": "White Shirt",
     "cartegory": "Men",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item1.png",
     "id": 1
   },
   {
     "name": "Net Blouse",
     "cartegory": "Women",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item2.png",
     "id": 2
   },
   {
     "name": "Casual Wears",
     "cartegory": "Kids",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item3.png",
     "id": 3
   },
   {
     "name": "White Trouser",
     "cartegory": "Men",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item4.png",
     "id": 4
   },
   {
     "name": "Shoe",
     "cartegory": "Unisex",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item5.png",
     "id": 5
   },
   {
     "name": "Corporate Wear",
     "cartegory": "Women",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item6.png",
     "id": 6
   },
   {
     "name": "Modern Wear",
     "cartegory": "Kids",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item7.png",
     "id": 7
   },
   {
     "name": "Suite",
     "cartegory": "Men",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item8.png",
     "id": 8
   },
   {
     "name": "Zee Gown",
     "cartegory": "Women",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item9.png",
     "id": 9
   },
   {
     "name": "Party Wear",
     "cartegory": "Women",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item10.png",
     "id": 10
   },
   {
     "name": "Ball gown",
     "cartegory": "Kids",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item11.png",
     "id": 11
   },
   {
     "name": "Party Wear",
     "cartegory": "Women",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item12.png",
     "id": 12
   },
   {
     "name": "Corporate Wear",
     "cartegory": "Women",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item13.png",
     "id": 13
   },
   {
     "name": "Corporate Wear",
     "cartegory": "Women",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item14.png",
     "id": 14
   },
   {
     "name": "Zee Gown",
     "cartegory": "Kids",
-    "price": "$50.50",
+    "price": 50.5,
     "img": "item15.png",
     "id": 15
+  },
+  {
+    "name": "White Shirt",
+    "cartegory": "Men",
+    "price": 50.5,
+    "img": "item1.png",
+    "id": 16
+  },
+  {
+    "name": "Net Blouse",
+    "cartegory": "Women",
+    "price": 50.5,
+    "img": "item2.png",
+    "id": 17
+  },
+  {
+    "name": "Casual Wears",
+    "cartegory": "Kids",
+    "price": 50.5,
+    "img": "item3.png",
+    "id": 18
+  },
+  {
+    "name": "White Trouser",
+    "cartegory": "Men",
+    "price": 50.5,
+    "img": "item4.png",
+    "id": 19
+  },
+  {
+    "name": "Shoe",
+    "cartegory": "Unisex",
+    "price": 50.5,
+    "img": "item5.png",
+    "id": 20
+  },
+  {
+    "name": "Corporate Wear",
+    "cartegory": "Women",
+    "price": 50.5,
+    "img": "item6.png",
+    "id": 21
+  },
+  {
+    "name": "Modern Wear",
+    "cartegory": "Kids",
+    "price": 50.5,
+    "img": "item7.png",
+    "id": 22
+  },
+  {
+    "name": "Suite",
+    "cartegory": "Men",
+    "price": 50.5,
+    "img": "item8.png",
+    "id": 23
+  },
+  {
+    "name": "Zee Gown",
+    "cartegory": "Women",
+    "price": 50.5,
+    "img": "item9.png",
+    "id": 24
+  },
+  {
+    "name": "Party Wear",
+    "cartegory": "Women",
+    "price": 50.5,
+    "img": "item10.png",
+    "id": 25
+  },
+  {
+    "name": "Ball gown",
+    "cartegory": "Kids",
+    "price": 50.5,
+    "img": "item11.png",
+    "id": 26
+  },
+  {
+    "name": "Party Wear",
+    "cartegory": "Women",
+    "price": 50.5,
+    "img": "item12.png",
+    "id": 27
+  },
+  {
+    "name": "Corporate Wear",
+    "cartegory": "Women",
+    "price": 50.5,
+    "img": "item13.png",
+    "id": 28
+  },
+  {
+    "name": "Corporate Wear",
+    "cartegory": "Women",
+    "price": 50.5,
+    "img": "item14.png",
+    "id": 29
+  },
+  {
+    "name": "Zee Gown",
+    "cartegory": "Kids",
+    "price": 50.5,
+    "img": "item15.png",
+    "id": 30
+  },
+  {
+    "name": "White Shirt",
+    "cartegory": "Men",
+    "price": 50.5,
+    "img": "item1.png",
+    "id": 31
+  },
+  {
+    "name": "Net Blouse",
+    "cartegory": "Women",
+    "price": 50.5,
+    "img": "item2.png",
+    "id": 32
+  },
+  {
+    "name": "Casual Wears",
+    "cartegory": "Kids",
+    "price": 50.5,
+    "img": "item3.png",
+    "id": 33
+  },
+  {
+    "name": "White Trouser",
+    "cartegory": "Men",
+    "price": 50.5,
+    "img": "item4.png",
+    "id": 34
+  },
+  {
+    "name": "Shoe",
+    "cartegory": "Unisex",
+    "price": 50.5,
+    "img": "item5.png",
+    "id": 35
+  },
+  {
+    "name": "Corporate Wear",
+    "cartegory": "Women",
+    "price": 50.5,
+    "img": "item6.png",
+    "id": 36
+  },
+  {
+    "name": "Modern Wear",
+    "cartegory": "Kids",
+    "price": 50.5,
+    "img": "item7.png",
+    "id": 37
+  },
+  {
+    "name": "Suite",
+    "cartegory": "Men",
+    "price": 50.5,
+    "img": "item8.png",
+    "id": 38
+  },
+  {
+    "name": "Zee Gown",
+    "cartegory": "Women",
+    "price": 50.5,
+    "img": "item9.png",
+    "id": 39
+  },
+  {
+    "name": "Party Wear",
+    "cartegory": "Women",
+    "price": 50.5,
+    "img": "item10.png",
+    "id": 40
+  },
+  {
+    "name": "Ball gown",
+    "cartegory": "Kids",
+    "price": 50.5,
+    "img": "item11.png",
+    "id": 41
+  },
+  {
+    "name": "Party Wear",
+    "cartegory": "Women",
+    "price": 50.5,
+    "img": "item12.png",
+    "id": 42
+  },
+  {
+    "name": "Corporate Wear",
+    "cartegory": "Women",
+    "price": 50.5,
+    "img": "item13.png",
+    "id": 43
+  },
+  {
+    "name": "Corporate Wear",
+    "cartegory": "Women",
+    "price": 50.5,
+    "img": "item14.png",
+    "id": 44
+  },
+  {
+    "name": "Zee Gown",
+    "cartegory": "Kids",
+    "price": 50.5,
+    "img": "item15.png",
+    "id": 45
   }
 ]

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { CgSortAz } from "react-icons/cg";
 import heroImage from "../assets/HeroImg.png";
 import heroImageMobile from "../assets/HeroImgMobile.png";
+import hero2 from "../assets/hero2.jpg";
+import hero3 from "../assets/hero3.jpg";
+import hero4 from "../assets/hero4.jpg";
 import Carousel from "../components/Carousel";
 
 const options = ["Recommended", "New Arrivals", "Price Low to High"];
@@ -16,8 +19,8 @@ const slides = [
     buttonText: "SHOP NOW",
   },
   {
-    smallImage: heroImageMobile,
-    largeImage: heroImage,
+    smallImage: hero2,
+    largeImage: hero2,
     heading: "GET 50% OFF YOUR FIRST ORDER",
     subheading: "WHEN YOU ORDER MORE THAN SEVEN ITEMS",
     description:
@@ -25,8 +28,8 @@ const slides = [
     buttonText: "SHOP NOW",
   },
   {
-    smallImage: heroImageMobile,
-    largeImage: heroImage,
+    smallImage: hero3,
+    largeImage: hero3,
     heading: "GET 50% OFF YOUR FIRST ORDER",
     subheading: "WHEN YOU ORDER MORE THAN SEVEN ITEMS",
     description:
@@ -34,8 +37,8 @@ const slides = [
     buttonText: "SHOP NOW",
   },
   {
-    smallImage: heroImageMobile,
-    largeImage: heroImage,
+    smallImage: hero4,
+    largeImage: hero4,
     heading: "GET 50% OFF YOUR FIRST ORDER",
     subheading: "WHEN YOU ORDER MORE THAN SEVEN ITEMS",
     description:
@@ -43,8 +46,8 @@ const slides = [
     buttonText: "SHOP NOW",
   },
   {
-    smallImage: heroImageMobile,
-    largeImage: heroImage,
+    smallImage: hero2,
+    largeImage: hero2,
     heading: "GET 50% OFF YOUR FIRST ORDER",
     subheading: "WHEN YOU ORDER MORE THAN SEVEN ITEMS",
     description:
@@ -94,11 +97,6 @@ const Header = () => {
               ))}
             </select>
           </div>
-        </div>
-        <div className='bg-[#4670DC] w-[105px] md:w-[160px] text-white p-2 rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] md:mx-auto mt-9 flex items-center'>
-          <p className='font-custom-weight font-SansSerifBldFLF text-base md:text-2xl'>
-            New Arrivals
-          </p>
         </div>
       </div>
       <Carousel slides={slides} />

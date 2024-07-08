@@ -78,8 +78,8 @@ const Footer = () => {
 
   return (
     <div className='bg-[#171717] text-white px-5 pt-10 md:px-[45px] lg:px-[95px] pb-[20px] md:py-[60px]'>
-      <div className='flex gap-4 pb-10 md:pb-[70px] md:border-b-2 md:border-white'>
-        <div className='flex flex-col items-center text-center'>
+      <div className='flex justify-center gap-4 pb-10 md:pb-[70px] md:border-b-2 md:border-white'>
+        <div className='flex flex-col justify-center items-center text-center'>
           <h3 className='font-custom-weight font-SansSerifExbFLF text-base md:text-xl'>
             JOIN OUR EMAIL LIST
           </h3>
@@ -91,7 +91,7 @@ const Footer = () => {
             placeholder='Enter your email address'
             className='w-full px-4 py-2 mt-3 text-base font-normal font-Helvetica'
           />
-          <div className='flex md:hidden w-[390px] items-start mt-8 '>
+          <div className='flex w-[390px] items-start mt-8 '>
             <input type='checkbox' className='mt-[5px] mr-2' />
             <p className='text-left text-xs font-normal font-Helvetica'>
               I acknowledge I have read and understood the Privacy Policy and I
@@ -102,17 +102,6 @@ const Footer = () => {
           <button className='bg-white px-4 py-2 text-[#4670DC] text-xs md:text-base font-custom-weight font-SansSerifFLF mt-4 w-[100px]'>
             SIGN UP
           </button>
-        </div>
-        <div className='hidden md:flex ml-10 mt-28 w-[425px]'>
-          <p className='font-Helvetica font-normal text-sm'>
-            <input
-              type='checkbox'
-              className='mr-2 bg-transparent border border-black'
-            />
-            I acknowledge I have read and understood the Privacy Policy and I
-            consent to the processing of my personal data for marketing and
-            profiling purposes.
-          </p>
         </div>
       </div>
       <div className='flex flex-col md:flex-row mt-0 md:mt-[70px] md:gap-[90px] lg:gap-[150px]'>

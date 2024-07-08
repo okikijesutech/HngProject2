@@ -3,3 +3,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-scrollbar {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #171717 #f0f0f0; /* For Firefox */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #171717;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Color of the scroll track */
+  border-radius: 10px;
+}
+/* styles.css */
+
+.custom-scrollbar {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #171717 transparent; /* For Firefox */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #171717; /* Color of the scroll thumb */
+  border-radius: 10px;
+  border: 2px solid transparent; /* Add some space around the thumb */
+  background-clip: padding-box; /* Fixes the border transparency issue */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Make the track transparent */
+}

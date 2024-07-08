@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/zooLogo.png";
+import logo from "../assets/zlogo.png";
 import { FaRegHeart } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";
 import { RiShoppingBagLine } from "react-icons/ri";
