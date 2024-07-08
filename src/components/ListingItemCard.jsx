@@ -4,7 +4,7 @@ import { FaStar, FaRegStar, FaRegHeart } from "react-icons/fa";
 
 const ListingItemCard = ({ item, imageMap }) => {
   return (
-    <div className='w-[193px] h-[320px] md:w-[250px] lg:w-[300px] font-Helvetica'>
+    <div className='w-[193px] h-[320px] md:w-[180px] lg:w-[300px] font-Helvetica'>
       <div className='shadow-md'>
         <img
           src={imageMap[item.img]}

@@ -4,7 +4,7 @@ import logo from "../assets/zooLogo.png";
 import { FaRegHeart } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";
 import { RiShoppingBagLine } from "react-icons/ri";
-import { HiOutlineMenu, HiX } from "react-icons/hi"; // Fallback option for HiBars4
+import { HiOutlineMenu, HiX } from "react-icons/hi";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className='flex items-center justify-between px-[14px] md:px-[100px] bg-[#171717] md:bg-white font-SansSerifFLF '>
+    <div className='flex items-center justify-between px-[14px] md:px[10px] lg:px-[100px] bg-[#171717] md:bg-white font-SansSerifFLF '>
       <div className='flex flex-row-reverse md:flex-row items-center'>
         <div className='ml-[150px] md:ml-0 w-[75px] h-[45px] md:w-[150px] md:h-[90px]'>
           <Link to='/'>
@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className='flex md:hidden text-white' onClick={toggleMenu}>
           {menuOpen ? <HiX size={24} /> : <HiOutlineMenu size={24} />}
         </div>
-        <ul className='hidden md:flex text-base font-medium ml-[92px]'>
+        <ul className='hidden md:flex text-base font-custom-weight md:ml-[20px] lg:ml-[92px]'>
           <li className='border-r-2 border-black px-2'>
             <Link to='/'>MEN</Link>
           </li>
@@ -36,7 +36,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className='flex items-center gap-10'>
+      <div className='flex items-center md:gap-3 lg:gap-10'>
         <div className='hidden md:flex items-center'>
           <div className='bg-[#4670DC] p-2 text-white'>
             <IoSearchOutline style={{ transform: "rotate(-275deg)" }} />

@@ -77,7 +77,7 @@ const Footer = () => {
   );
 
   return (
-    <div className='bg-[#171717] text-white px-5 pt-10 md:px-[95px] pb-[20px] md:py-[60px]'>
+    <div className='bg-[#171717] text-white px-5 pt-10 md:px-[45px] lg:px-[95px] pb-[20px] md:py-[60px]'>
       <div className='flex gap-4 pb-10 md:pb-[70px] md:border-b-2 md:border-white'>
         <div className='flex flex-col items-center text-center'>
           <h3 className='font-custom-weight font-SansSerifExbFLF text-base md:text-xl'>
@@ -115,11 +115,11 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className='flex flex-col md:flex-row mt-0 md:mt-[70px] md:gap-[150px]'>
+      <div className='flex flex-col md:flex-row mt-0 md:mt-[70px] md:gap-[90px] lg:gap-[150px]'>
         {sections.map(({ title, items }) => renderSection(title, items))}
       </div>
       <div className='flex flex-col md:flex-row items-start md:items-center justify-between mt-16 md:mt-10'>
-        <div className='flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-16 mb-10 text-sm md:text-base font-SansSerifFLF font-custom-weight'>
+        <div className='flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-9 lg:gap-16 mb-10 text-sm lg:text-base font-SansSerifFLF font-custom-weight'>
           <button className='border-solid border-2 p-[10px] border-[#FF9F3D] text-[#FF9f3D] text-sm mb-8 md:mb-0'>
             Cookie Preference
           </button>

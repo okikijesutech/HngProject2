@@ -74,11 +74,11 @@ const Header = () => {
 
   return (
     <div>
-      <div className='px-[15px] md:px-[100px]'>
+      <div className='px-[15px] lg:px-[100px]'>
         <p className='text-2xl font-bold font-HelveticaRounded mt-10 md:mt-6'>
           <span className='text-[#00000080]'>Home/</span>Shop
         </p>
-        <div className='flex items-center p-1 border border-black w-[191px] md:w-[356px] mt-4 md:mt-14 text-xs md:text-2xl font-bold font-HelveticaRounded'>
+        <div className='flex items-center p-1 border border-black w-[191px] md:w-[267px] lg:w-[356px] mt-4 md:mt-14 text-xs md:text-lg lg:text-2xl font-bold font-HelveticaRounded'>
           <CgSortAz size={24} />
           <p className='mr-2 '>Sort</p>
           <div className='border-black border-l-2'>

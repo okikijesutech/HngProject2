@@ -29,7 +29,7 @@ const Carousel = ({ slides }) => {
   };
 
   return (
-    <div className='relative h-[40vh] md:h-[85vh] overflow-hidden text-white flex flex-col justify-center items-center mt-3'>
+    <div className='relative h-[40vh] md:h-[85vh] overflow-hidden text-white flex flex-col justify-center items-center mt-3 md:mt-8 lg:mt-3'>
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -43,15 +43,15 @@ const Carousel = ({ slides }) => {
             backgroundPosition: "center",
           }}
         >
-          <div className='h-full flex flex-col py-[230px] md:pt-[400px] text-center justify-center items-center'>
-            <h1 className='mb-4 text-xl font-SansSerifExbFLF font-semibold md:text-5xl md:font-custom-weight w-[90%] md:w-[1088px]'>
+          <div className='h-full flex flex-col py-[230px] md:pt-[350px] lg:pt-[400px] text-center justify-center items-center'>
+            <h1 className='mb-4 text-xl font-SansSerifExbFLF font-semibold md:text-3xl lg:text-5xl md:font-custom-weight w-[90%] md:w-[1088px]'>
               {slide.heading}
               <span className='hidden md:block'>{slide.subheading}</span>
             </h1>
-            <p className='mb-4 text-xs md:text-2xl font-HelveticaRounded font-bold w-[90%] md:w-[530px]'>
+            <p className='mb-4 text-xs md:text-xl lg:text-2xl font-HelveticaRounded font-bold w-[90%] md:w-[530px]'>
               {slide.description}
             </p>
-            <button className='bg-white text-black p-3 text-xs md:text-2xl font-SansSerifExbFLF font-custom-weight w-[110px] md:w-[300px]'>
+            <button className='bg-white text-black p-3 text-xs md:text-xl lg:text-2xl font-SansSerifExbFLF font-custom-weight w-[110px] md:w-[300px]'>
               {slide.buttonText}
             </button>
           </div>

@@ -71,7 +71,7 @@ const Cart = () => {
           <CartItemList cartItems={cartItems} />
           <MobileCarousel images={images} />
           <div className='px-4 md:px-[39px]'>
-            <div className='w-full text-xs mt-8 md:mt-[39px]'>
+            <div className='w-ful md:w-[300px] lg:w-full text-xs mt-8 md:mt-[39px]'>
               <OrderSummary />
             </div>
             <Link to='/checkout'>
