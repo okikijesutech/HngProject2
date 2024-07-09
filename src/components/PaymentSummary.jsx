@@ -25,7 +25,7 @@ const PaymentSummary = () => {
   };
 
   return (
-    <div className='font-Helvetica font-bold lg:w-[440px]'>
+    <div className='font-Helvetica font-bold lg:w-full'>
       <h3 className='text-2xl'>Payment Summary</h3>
       <div className='flex items-center justify-between mt-6'>
         <p className='text-lg'>Promotions</p>
