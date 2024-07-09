@@ -1,23 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import CheckoutListing from "../container/CheckoutListing";
 import OrderSummary from "../components/OrderSummary";
 import { CgChevronLeft } from "react-icons/cg";
 import CheckoutForm from "../components/CheckoutForm";
 import { toast, ToastContainer } from "react-toastify";
+import { useCart } from "../context/CartContext";
 import "react-toastify/dist/ReactToastify.css";
 
 const CheckOut = () => {
   const [activeSection, setActiveSection] = useState("shipping");
+  const { clearCart } = useCart();
   const navigate = useNavigate();
 
   const toggleSection = (section) => {
     setActiveSection(activeSection === section ? null : section);
   };
 
-  const handleOrderClick = () => {
+  const handleOrderClick = async () => {
     toast.success("Your order has been placed successfully!");
-
+    await clearCart();
     setTimeout(() => {
       navigate("/");
     }, 2000);
