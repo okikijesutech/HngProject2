@@ -8,7 +8,7 @@ import googlepay from "../assets/googlepay.png";
 
 const CheckoutForm = ({ title, formId, activeSection, toggleSection }) => {
   return (
-    <div className='mb-6'>
+    <div className='mb-6 rounded-md'>
       <div
         className='flex items-center justify-between bg-white p-4 cursor-pointer'
         onClick={() => toggleSection(formId)}

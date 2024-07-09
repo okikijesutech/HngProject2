@@ -47,7 +47,7 @@ const Pagination = ({
   const displayedPages = getDisplayedPages();
 
   return (
-    <div className='flex justify-center items-center mt-56 font-HelveticaRounded'>
+    <div className='flex justify-center items-center mb-4 md:mb-6 lg:mb-10 mt-24 md:mt-14 lg:mt-20 font-HelveticaRounded'>
       <FaChevronLeft
         className={`text-black mr-12 md:mr-20 cursor-pointer ${
           currentPage === 1 && "opacity-50 cursor-not-allowed"

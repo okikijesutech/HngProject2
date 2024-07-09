@@ -19,15 +19,18 @@ const Listings = ({ toggleFavorite, rateProduct }) => {
   const currentProducts = products.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
-    <div id='listing' className='bg-gradient-to-b from-[#FFFCFB] to-[#FBCDBD]'>
+    <div
+      id='listing'
+      className='bg-gradient-to-b from-[#FFFCFB] to-[#FBCDBD] p-4'
+    >
       <div className='bg-[#4670DC] w-[105px] md:w-[160px] text-white p-2 rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] md:mx-auto mt-9 flex items-center'>
         <p className='font-custom-weight font-SansSerifBldFLF text-base md:text-2xl'>
           New Arrivals
         </p>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12'>
+      <div className='grid grid-cols-2 md:grid-cols-3 gap-4 mt-12'>
         {currentProducts.map((product) => (
-          <div className='px-24'>
+          <div className='md:px-10 lg:px-24'>
             <ListingItemCard
               key={product.id}
               item={product}

@@ -5,8 +5,12 @@ import CartHeader from "../components/CartHeader";
 import CartItemList from "../components/CartItemList";
 import MobileCarousel from "../components/CartMobileCarousel";
 import CartFooter from "../components/CartFooter";
+import image1 from "../assets/item1.png";
+import image2 from "../assets/item2.png";
+import image3 from "../assets/item3.png";
+import image4 from "../assets/corporate.png";
 
-const images = [];
+const images = [image1, image2, image3, image4];
 
 const Cart = () => {
   const [showPaymentSummary, setShowPaymentSummary] = useState(false);
