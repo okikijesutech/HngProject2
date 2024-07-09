@@ -4,7 +4,6 @@ import { useCart } from "../context/CartContext";
 const PaymentSummary = () => {
   const { cartItems } = useCart();
   const [promoCode, setPromoCode] = useState("");
-  const [discount, setDiscount] = useState(0);
 
   const totalItemsPrice = cartItems.reduce((total, item) => {
     const price = parseFloat(item.price) || 0;
@@ -16,14 +15,6 @@ const PaymentSummary = () => {
 
   const subtotal = totalItemsPrice + shippingFee;
   const total = subtotal / 2;
-
-  const handleApplyPromo = () => {
-    if (promoCode.trim() !== "") {
-      setDiscount(total / 2);
-    } else {
-      setDiscount(total / 2);
-    }
-  };
 
   return (
     <div className='font-Helvetica font-bold lg:w-full'>
@@ -41,11 +32,9 @@ const PaymentSummary = () => {
         <input
           type='text'
           placeholder='Type in your Promo code'
-          value={promoCode}
-          onChange={(e) => setPromoCode(e.target.value)}
           className='font-normal text-lg text-black bg-transparent outline-none'
         />
-        <button onClick={handleApplyPromo}>Apply</button>
+        <button>Apply</button>
       </div>
       <hr className='border-[1px] border-[black]' />
       <div className='mt-2 px-2'>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { FaStar, FaRegStar, FaHeart, FaRegHeart } from "react-icons/fa";
 import { useFavorites } from "../context/FavoritesContext";
 import { useRatings } from "../context/RatingsContext";
@@ -26,6 +26,12 @@ const ListingItemCard = ({ item, imageMap, addToCart }) => {
     }
   };
 
+  const handleRateProduct = (itemId, ratingValue) => {
+    rateProduct(itemId, ratingValue);
+
+    toast.success("Thanks for rating this product!");
+  };
+
   return (
     <div className='min-w-[150px] max-w-[193px] h-[320px] md:min-w-[225px] lg:min-w-[300px] font-Helvetica p-1 group hover:shadow-lg transition-shadow duration-300'>
       <div className='shadow-md'>
@@ -47,7 +53,7 @@ const ListingItemCard = ({ item, imageMap, addToCart }) => {
             .map((_, index) => (
               <span
                 key={index}
-                onClick={() => rateProduct(item.id, index + 1)}
+                onClick={() => handleRateProduct(item.id, index + 1)}
                 className='cursor-pointer'
               >
                 {index < itemRating ? (

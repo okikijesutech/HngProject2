@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CheckoutListing from "../container/CheckoutListing";
 import OrderSummary from "../components/OrderSummary";
@@ -27,7 +27,17 @@ const CheckOut = () => {
 
   return (
     <div className='bg-gradient-to-b from-[#FFFCFB] to-[#FBCDBD] px-4 pt-6 lg:pt-16 font-Helvetica'>
-      <ToastContainer />
+      <ToastContainer
+        position='top-center'
+        autoClose={1000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className='flex lg:block'>
         <CgChevronLeft
           size={20}

@@ -1,7 +1,6 @@
 import React from "react";
 import { CgChevronDown, CgChevronUp } from "react-icons/cg";
 import verve from "../assets/verve.png";
-import stripe from "../assets/stripe.png";
 import paypal from "../assets/paypal.png";
 import mastercard from "../assets/mastercard.png";
 import googlepay from "../assets/googlepay.png";

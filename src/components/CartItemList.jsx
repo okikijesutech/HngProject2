@@ -22,7 +22,7 @@ const CartItemList = () => {
       ) : (
         cartItems.map((item) => (
           <CartItem
-            key={item.name}
+            key={item.id}
             item={item}
             imageMap={imageMap}
             removeFromCart={removeFromCart}

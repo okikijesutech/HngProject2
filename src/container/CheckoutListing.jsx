@@ -39,7 +39,7 @@ const CheckoutListing = () => {
             <tbody>
               {cartItems.map((item) => (
                 <tr
-                  key={item.name}
+                  key={item.id}
                   className='border-b border-black text-xs md:text-base lg:text-lg font-normal text-center'
                 >
                   <td className='text-[#D13737]'>

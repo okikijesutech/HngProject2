@@ -1,15 +1,10 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Promotion from "../components/Promotion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 
 const MainLayout = () => {
-  const location = useLocation();
-
-  const isCheckoutPage = location.pathname === "/checkout";
-  const isDesktopView = () => window.innerWidth > 430;
-
   return (
     <>
       <ScrollToTop />

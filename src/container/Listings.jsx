@@ -8,7 +8,7 @@ import { useCart } from "../context/CartContext";
 const Listings = ({ toggleFavorite, rateProduct }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const { addToCart } = useCart();
-  const [itemsPerPage, setItemsPerPage] = useState(9); // Default for desktop
+  const [itemsPerPage, setItemsPerPage] = useState(9);
 
   const calculateItemsPerPage = () => {
     if (window.innerWidth < 768) {
