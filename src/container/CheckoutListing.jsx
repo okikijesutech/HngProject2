@@ -26,7 +26,7 @@ const CheckoutListing = () => {
       ) : (
         <table className='w-full border-collapse font-helvetica text-base md:text-lg lg:text-xl font-bold leading-tight text-left'>
           <thead>
-            <tr className='border-b border-black text-xs md:text-base lg:text-lg font-bold'>
+            <tr className='border-b border-black text-xs md:text-base lg:text-lg font-bold text-center'>
               <th></th>
               <th></th>
               <th>Name</th>
@@ -39,7 +39,7 @@ const CheckoutListing = () => {
             {cartItems.map((item) => (
               <tr
                 key={item.name}
-                className='border-b border-black text-xs md:text-base lg:text-lg font-normal'
+                className='border-b border-black text-xs md:text-base lg:text-lg font-normal text-center'
               >
                 <td className='text-[#D13737]'>
                   <FaXmark
