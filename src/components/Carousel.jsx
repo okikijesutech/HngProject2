@@ -22,7 +22,7 @@ const Carousel = ({ slides }) => {
   };
   const getBackgroundSize = () => {
     if (window.innerWidth < 768) {
-      return "contain";
+      return "cover";
     } else {
       return "cover";
     }

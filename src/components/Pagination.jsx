@@ -14,7 +14,7 @@ const Pagination = ({
 
   const getDisplayedPages = () => {
     const totalPages = pageNumbers.length;
-    if (totalPages <= 5) {
+    if (totalPages <= 4) {
       return pageNumbers;
     }
 

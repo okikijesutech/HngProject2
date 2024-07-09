@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ListingItemCard from "../components/ListingItemCard";
 import Pagination from "../components/Pagination";
 import products from "../items.json";
@@ -7,8 +7,24 @@ import { useCart } from "../context/CartContext";
 
 const Listings = ({ toggleFavorite, rateProduct }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
   const { addToCart } = useCart();
+  const [itemsPerPage, setItemsPerPage] = useState(9); // Default for desktop
+
+  const calculateItemsPerPage = () => {
+    if (window.innerWidth < 768) {
+      setItemsPerPage(10);
+    } else {
+      setItemsPerPage(9);
+    }
+  };
+
+  useEffect(() => {
+    calculateItemsPerPage();
+    window.addEventListener("resize", calculateItemsPerPage);
+    return () => {
+      window.removeEventListener("resize", calculateItemsPerPage);
+    };
+  }, []);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -23,7 +39,7 @@ const Listings = ({ toggleFavorite, rateProduct }) => {
       id='listing'
       className='bg-gradient-to-b from-[#FFFCFB] to-[#FBCDBD] p-4'
     >
-      <div className='bg-[#4670DC] w-[125px] md:w-[160px] text-white p-2 rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] md:mx-auto mt-9 flex items-center'>
+      <div className='bg-[#4670DC] w-[115px] md:w-[160px] text-white p-2 rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] md:mx-auto mt-9 flex items-center'>
         <p className='font-custom-weight font-SansSerifBldFLF text-base md:text-2xl'>
           New Arrivals
         </p>

@@ -2,8 +2,11 @@ import React from "react";
 
 const CartItem = ({ item }) => {
   return (
-    <div key={item.name} className='w-full md:w-[260px] p-4 flex gap-2'>
-      <div className='flex-1 md:w-[200px] lg:w-[300px]'>
+    <div
+      key={item.name}
+      className='w-full md:w-[260px] lg:w[700px] p-4 flex gap-2'
+    >
+      <div className='flex-1 md:w-[200px] lg:w-[400px]'>
         <img
           src={item.img}
           alt={item.name}

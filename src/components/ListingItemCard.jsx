@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { FaStar, FaRegStar, FaHeart, FaRegHeart } from "react-icons/fa";
 import { useFavorites } from "../context/FavoritesContext";
 import { useRatings } from "../context/RatingsContext";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ListingItemCard = ({ item, imageMap, addToCart }) => {
   const { favorites, toggleFavorite } = useFavorites();
@@ -9,6 +11,20 @@ const ListingItemCard = ({ item, imageMap, addToCart }) => {
 
   const isFavorite = favorites.includes(item.id);
   const itemRating = ratings[item.id] || 0;
+
+  const handleAddToCart = (item) => {
+    addToCart(item);
+    toast.success("Item added successfully to cart!");
+  };
+
+  const handleToggleFavorite = (itemId) => {
+    toggleFavorite(itemId);
+    if (!isFavorite) {
+      toast.info("Item added to favorites!");
+    } else {
+      toast.warning("Item removed from favorites!");
+    }
+  };
 
   return (
     <div className='w-[193px] h-[320px] md:w-[225px] lg:w-[300px] font-Helvetica p-1 group hover:shadow-lg transition-shadow duration-300'>
@@ -55,7 +71,7 @@ const ListingItemCard = ({ item, imageMap, addToCart }) => {
             ))}
         </div>
         <span
-          onClick={() => toggleFavorite(item.id)}
+          onClick={() => handleToggleFavorite(item.id)}
           className='cursor-pointer'
         >
           {isFavorite ? (
@@ -81,7 +97,7 @@ const ListingItemCard = ({ item, imageMap, addToCart }) => {
       </div>
       <button
         className='bg-white px-4 py-2 shadow-md w-full font-bold text-xs border border-[#171717]'
-        onClick={() => addToCart(item)}
+        onClick={() => handleAddToCart(item)}
       >
         + ADD
       </button>
