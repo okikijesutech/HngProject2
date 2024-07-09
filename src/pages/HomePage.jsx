@@ -20,7 +20,17 @@ const HomePage = () => {
         toggleFavorite={toggleFavorite}
         rateProduct={rateProduct}
       />
-      <ToastContainer />
+      <ToastContainer
+        position='top-center'
+        autoClose={1000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

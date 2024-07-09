@@ -12,6 +12,7 @@ import CheckOut from "./pages/CheckOut";
 import { CartProvider } from "./context/CartContext";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import { RatingsProvider } from "./context/RatingsContext";
+import Favourite from "./pages/Favourite";
 
 function App() {
   const router = createBrowserRouter(
@@ -20,6 +21,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/checkout' element={<CheckOut />} />
+        <Route path='/favourite' element={<Favourite />} />
       </Route>
     )
   );

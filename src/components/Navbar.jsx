@@ -17,10 +17,10 @@ const Navbar = () => {
   return (
     <div className='flex items-center justify-between px-[14px] md:px-[10px] lg:px-[100px] bg-[#171717] md:bg-white font-SansSerifFLF'>
       <div className='flex flex-row-reverse md:flex-row items-center'>
-        <div className='ml-[150px] md:ml-0 w-[75px] h-[45px] md:w-[150px] md:h-[90px]'>
+        <div className='flex items-center ml-[150px] md:ml-0 w-[55px] h-[45px] md:w-[150px] md:h-[90px]'>
           <Link to='/'>
-            {/* Conditional rendering of logo based on screen size */}
-            <img src={menuOpen ? mobileLogo : logo} alt='Zee logo' />
+            <img src={logo} alt='Zee logo' className='hidden md:block' />
+            <img src={mobileLogo} alt='Zee logo' className='md:hidden block' />
           </Link>
         </div>
         <div className='flex md:hidden text-white' onClick={toggleMenu}>
@@ -49,7 +49,9 @@ const Navbar = () => {
             className='outline-none p-1 font-medium text-base border'
           />
         </div>
-        <FaRegHeart className='hidden md:block' size={24} />
+        <Link to='/favourite'>
+          <FaRegHeart className='hidden md:block' size={24} />
+        </Link>
         <Link to='/cart' className='text-white md:text-black'>
           <RiShoppingBagLine size={24} />
         </Link>
