@@ -49,19 +49,18 @@ const CheckoutForm = ({ title, formId, activeSection, toggleSection }) => {
                     className='w-full md:w-1/2 p-2 border-b border-gray-300'
                   />
                 </div>
-                <div className='flex justify-between gap-4 my-4'>
+                <div className='flex justify-between gap-12 md:gap-6 my-4 w-[350px] md:w-[200px] h-[33px]'>
                   <img src={verve} alt='Verve' className='w-1/5 h-auto' />
                   <img src={paypal} alt='PayPal' className='w-1/5 h-auto' />
-                  <img src={stripe} alt='Stripe' className='w-1/5 h-auto' />
                   <img
                     src={mastercard}
                     alt='MasterCard'
-                    className='w-1/5 h-auto'
+                    className='w-1/5 h-[26px]'
                   />
                   <img
                     src={googlepay}
                     alt='Google Pay'
-                    className='w-1/5 h-auto'
+                    className='w-1/5 h-[24px]'
                   />
                 </div>
                 <h4 className='text-lg font-bold'>Card Information</h4>

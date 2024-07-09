@@ -19,15 +19,6 @@ const slides = [
     buttonText: "SHOP NOW",
   },
   {
-    smallImage: hero2,
-    largeImage: hero2,
-    heading: "GET 50% OFF YOUR FIRST ORDER",
-    subheading: "WHEN YOU ORDER MORE THAN SEVEN ITEMS",
-    description:
-      "Save from the comfort of your home, any day, everywhere. Online only. Prices are marked.",
-    buttonText: "SHOP NOW",
-  },
-  {
     smallImage: hero3,
     largeImage: hero3,
     heading: "GET 50% OFF YOUR FIRST ORDER",
@@ -39,6 +30,15 @@ const slides = [
   {
     smallImage: hero4,
     largeImage: hero4,
+    heading: "GET 50% OFF YOUR FIRST ORDER",
+    subheading: "WHEN YOU ORDER MORE THAN SEVEN ITEMS",
+    description:
+      "Save from the comfort of your home, any day, everywhere. Online only. Prices are marked.",
+    buttonText: "SHOP NOW",
+  },
+  {
+    smallImage: hero2,
+    largeImage: hero2,
     heading: "GET 50% OFF YOUR FIRST ORDER",
     subheading: "WHEN YOU ORDER MORE THAN SEVEN ITEMS",
     description:
@@ -81,10 +81,9 @@ const Header = () => {
         <p className='text-2xl font-bold font-HelveticaRounded mt-10 md:mt-6'>
           <span className='text-[#00000080]'>Home/</span>Shop
         </p>
-        <div className='flex items-center p-1 border border-black w-[191px] md:w-[267px] lg:w-[356px] mt-4 md:mt-14 text-xs md:text-lg lg:text-2xl font-bold font-HelveticaRounded'>
+        <div className='flex items-center p-1 border border-black w-[150px] md:w-[210px] lg:w-[300px] mt-3 md:mt-5 text-xs md:text-lg lg:text-2xl font-bold font-HelveticaRounded'>
           <CgSortAz size={24} />
-          <p className='mr-2 '>Sort</p>
-          <div className='border-black border-l-2'>
+          <div>
             <select
               value={selectedValue}
               onChange={handleChange}
