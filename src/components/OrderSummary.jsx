@@ -11,7 +11,7 @@ const OrderSummary = () => {
   }, 0);
 
   const shippingFee = totalItemsPrice > 0 ? 50 : 0;
-  const discount = 0;
+  const discount = 50;
   const total = totalItemsPrice + shippingFee - discount;
 
   return (
@@ -30,7 +30,13 @@ const OrderSummary = () => {
             <td className='flex-1'>
               <p>Discount</p>
             </td>
-            <td className='flex-1 text-right'>${discount.toFixed(2)}</td>
+            <td className='flex-1 text-right'>${total.toFixed(2)}</td>
+          </tr>
+          <tr className='flex justify-between text-xs text-[#21AF5A]'>
+            <td className='flex-1'>
+              <p>50% off</p>
+            </td>
+            <td className='flex-1 text-right'>-${total.toFixed(2)}</td>
           </tr>
           <tr className='flex justify-between'>
             <td className='flex-1'>
