@@ -1,14 +1,11 @@
 import React, { createContext, useContext, useState } from "react";
 
-// Create the context
 const CartContext = createContext();
 
-// Custom hook to use the CartContext
 export const useCart = () => {
   return useContext(CartContext);
 };
 
-// CartProvider component to provide the cart context
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
@@ -22,6 +19,10 @@ export const CartProvider = ({ children }) => {
       }
       return [...prevItems, { ...item, unit: 1 }];
     });
+  };
+
+  const removeFromCart = (name) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.name !== name));
   };
 
   return (

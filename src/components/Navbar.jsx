@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/zlogo.png";
+import mobileLogo from "../assets/mobileLogo.png";
 import { FaRegHeart } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";
 import { RiShoppingBagLine } from "react-icons/ri";
@@ -14,11 +15,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className='flex items-center justify-between px-[14px] md:px[10px] lg:px-[100px] bg-[#171717] md:bg-white font-SansSerifFLF '>
+    <div className='flex items-center justify-between px-[14px] md:px-[10px] lg:px-[100px] bg-[#171717] md:bg-white font-SansSerifFLF'>
       <div className='flex flex-row-reverse md:flex-row items-center'>
         <div className='ml-[150px] md:ml-0 w-[75px] h-[45px] md:w-[150px] md:h-[90px]'>
           <Link to='/'>
-            <img src={logo} alt='Zee logo' />
+            {/* Conditional rendering of logo based on screen size */}
+            <img src={menuOpen ? mobileLogo : logo} alt='Zee logo' />
           </Link>
         </div>
         <div className='flex md:hidden text-white' onClick={toggleMenu}>
@@ -53,7 +55,7 @@ const Navbar = () => {
         </Link>
       </div>
       {menuOpen && (
-        <ul className='absolute top-[65px] left-0 w-full bg-[#1E1E1E]  bg-opacity-30 backdrop-blur-sm text-white text-base flex flex-col items-center space-y-4 py-4'>
+        <ul className='absolute top-[65px] left-0 w-full bg-[#1E1E1E] bg-opacity-30 backdrop-blur-sm text-white text-base flex flex-col items-center space-y-4 py-4'>
           <li>
             <Link to='/' onClick={toggleMenu}>
               MEN

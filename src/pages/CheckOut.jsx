@@ -4,6 +4,8 @@ import CheckoutListing from "../container/CheckoutListing";
 import OrderSummary from "../components/OrderSummary";
 import { CgChevronLeft } from "react-icons/cg";
 import CheckoutForm from "../components/CheckoutForm";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CheckOut = () => {
   const [activeSection, setActiveSection] = useState("shipping");
@@ -13,8 +15,17 @@ const CheckOut = () => {
     setActiveSection(activeSection === section ? null : section);
   };
 
+  const handleOrderClick = () => {
+    toast.success("Your order has been placed successfully!");
+
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
+  };
+
   return (
     <div className='bg-gradient-to-b from-[#FFFCFB] to-[#FBCDBD] px-4 pt-6 lg:pt-16 font-Helvetica'>
+      <ToastContainer />
       <div className='flex lg:block'>
         <CgChevronLeft
           size={20}
@@ -25,12 +36,12 @@ const CheckOut = () => {
           Review your items
         </h1>
       </div>
-      <div className='flex flex-wrap gap-4'>
-        <div className='w-full md:w-[300px]'>
-          <div className='mb-4'>
+      <div className='flex flex-wrap flex-col lg:flex-row gap-4'>
+        <div className='w-full flex-1 flex flex-col-reverse md:flex-row lg:flex-col'>
+          <div className='mb-4 flex-1'>
             <OrderSummary />
           </div>
-          <div>
+          <div className='flex-1'>
             <CheckoutListing />
           </div>
         </div>
@@ -50,8 +61,11 @@ const CheckOut = () => {
           ))}
         </div>
       </div>
-      <div className='flex items-center mt-12 md:mt-52 lg:mt-12 pb-8'>
-        <button className='bg-[#4670DC] text-white px-4 py-3 mx-auto w-full md:w-[300px] text-base md:text-xl lg:text-2xl font-bold'>
+      <div className='flex items-center mt-12 pb-8'>
+        <button
+          className='bg-[#4670DC] text-white px-4 py-3 mx-auto w-full md:w-[300px] text-base md:text-xl lg:text-2xl font-bold'
+          onClick={handleOrderClick}
+        >
           ORDER
         </button>
       </div>
