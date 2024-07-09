@@ -8,7 +8,10 @@ const CartItemList = () => {
   const { cartItems, removeFromCart } = useCart();
 
   return (
-    <div className='flex flex-col gap-4 md:h-[625px] w-full lg:w-96 overflow-x-hidden overflow-y-auto custom-scrollbar p-2 md:p-4'>
+    <div
+      className='flex flex-col gap-4 w-full overflow-y-auto custom-scrollbar p-2 md:p-4 '
+      style={{ maxHeight: "600px", minHeight: "600px" }}
+    >
       {cartItems.length === 0 ? (
         <div className='flex flex-col justify-center items-center h-full text-center'>
           <FaShoppingCart className='text-4xl mb-4 text-gray-400' />

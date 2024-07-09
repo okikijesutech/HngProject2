@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CgSortAz } from "react-icons/cg";
+import banner from "../assets/banner.webp";
 import heroImage from "../assets/HeroImg.png";
 import heroImageMobile from "../assets/HeroImgMobile.png";
 import hero2 from "../assets/hero2.jpg";
@@ -77,17 +78,27 @@ const Header = () => {
 
   return (
     <div>
-      <div className='px-[15px] lg:px-[100px]'>
-        <p className='text-2xl font-bold font-HelveticaRounded mt-10 md:mt-6'>
+      <div className='relative px-[8px] md:px-[15px] lg:px-[100px] md:h-[183px] mb-14 pb-3 md:pb-0 pt-2 md:pt-4'>
+        <div
+          className='absolute inset-0 bg-gray-800 opacity-40 -z-10'
+          style={{
+            backgroundImage: `url(${banner})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundColor: "#FFFCFB",
+          }}
+        ></div>
+        <p className='text-xl md:text-2xl font-bold font-HelveticaRounded pl-4 md:pl-0 mt-1 md:mt-6'>
           <span className='text-[#00000080]'>Home/</span>Shop
         </p>
-        <div className='flex items-center p-1 border border-black w-[150px] md:w-[210px] lg:w-[300px] mt-3 md:mt-5 text-xs md:text-lg lg:text-2xl font-bold font-HelveticaRounded'>
+        <div className='flex items-center p-1 border border-black w-[150px] md:w-[210px] lg:w-[300px]  mt-3 md:mt-5 text-xs md:text-lg lg:text-2xl font-bold font-HelveticaRounded'>
           <CgSortAz size={24} />
           <div>
             <select
               value={selectedValue}
               onChange={handleChange}
-              className='outline-none'
+              className='outline-none bg-transparent'
             >
               {options.map((option) => (
                 <option key={option} value={option}>

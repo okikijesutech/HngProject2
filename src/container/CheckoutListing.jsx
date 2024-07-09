@@ -24,44 +24,46 @@ const CheckoutListing = () => {
           <p className='text-lg font-semibold text-gray-600'>No orders yet</p>
         </div>
       ) : (
-        <table className='w-full border-collapse font-helvetica text-base md:text-lg lg:text-xl font-bold leading-tight text-left'>
-          <thead>
-            <tr className='border-b border-black text-xs md:text-base lg:text-lg font-bold text-center'>
-              <th></th>
-              <th></th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Subtotal</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cartItems.map((item) => (
-              <tr
-                key={item.name}
-                className='border-b border-black text-xs md:text-base lg:text-lg font-normal text-center'
-              >
-                <td className='text-[#D13737]'>
-                  <FaXmark
-                    size={14}
-                    onClick={() => handleRemoveFromCart(item.name)}
-                  />
-                </td>
-                <td>
-                  <img
-                    src={imageMap[item.img]}
-                    alt={item.name}
-                    className='w-8 h-8 md:w-16 md:h-16 lg:w-24 lg:h-24 object-contain rounded-lg'
-                  />
-                </td>
-                <td>{item.name}</td>
-                <td className='font-bold'>{item.price}</td>
-                <td>{item.unit}</td>
-                <td>{(item.price * item.unit).toFixed(2)}</td>
+        <div className='overflow-y-auto max-h-60 custom-scrollbar'>
+          <table className='w-full border-collapse font-helvetica text-base md:text-lg lg:text-xl font-bold leading-tight text-left'>
+            <thead>
+              <tr className='border-b border-black text-xs md:text-base lg:text-lg font-bold text-center'>
+                <th></th>
+                <th></th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {cartItems.map((item) => (
+                <tr
+                  key={item.name}
+                  className='border-b border-black text-xs md:text-base lg:text-lg font-normal text-center'
+                >
+                  <td className='text-[#D13737]'>
+                    <FaXmark
+                      size={14}
+                      onClick={() => handleRemoveFromCart(item.name)}
+                    />
+                  </td>
+                  <td>
+                    <img
+                      src={imageMap[item.img]}
+                      alt={item.name}
+                      className='w-8 h-8 md:w-16 md:h-16 lg:w-24 lg:h-24 object-contain rounded-lg'
+                    />
+                  </td>
+                  <td>{item.name}</td>
+                  <td className='font-bold'>{item.price}</td>
+                  <td>{item.unit}</td>
+                  <td>{(item.price * item.unit).toFixed(2)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

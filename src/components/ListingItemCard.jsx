@@ -27,7 +27,7 @@ const ListingItemCard = ({ item, imageMap, addToCart }) => {
   };
 
   return (
-    <div className='w-[193px] h-[320px] md:w-[225px] lg:w-[300px] font-Helvetica p-1 group hover:shadow-lg transition-shadow duration-300'>
+    <div className='min-w-[150px] max-w-[193px] h-[320px] md:min-w-[225px] lg:min-w-[300px] font-Helvetica p-1 group hover:shadow-lg transition-shadow duration-300'>
       <div className='shadow-md'>
         <img
           src={imageMap[item.img]}

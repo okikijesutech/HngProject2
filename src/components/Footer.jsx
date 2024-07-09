@@ -91,7 +91,7 @@ const Footer = () => {
             placeholder='Enter your email address'
             className='w-full px-4 py-2 mt-3 text-base font-normal font-Helvetica'
           />
-          <div className='flex w-[390px] items-start mt-8 '>
+          <div className='flex w-full md:w-[390px] lg:w-[450px] items-start mt-8 '>
             <input type='checkbox' className='mt-[5px] mr-2' />
             <p className='text-left text-xs font-normal font-Helvetica'>
               I acknowledge I have read and understood the Privacy Policy and I

@@ -43,7 +43,7 @@ const Carousel = ({ slides }) => {
             backgroundPosition: "center",
           }}
         >
-          <div className='h-full flex flex-col py-[230px] md:pt-[350px] lg:pt-[400px] text-center justify-center items-center'>
+          <div className='h-full flex flex-col py-[45%] md:pt-[350px] lg:pt-[400px] text-center justify-center items-center'>
             <h1 className='mb-4 text-xl font-SansSerifExbFLF font-semibold md:text-3xl lg:text-5xl md:font-custom-weight w-[90%] md:w-[1088px]'>
               {slide.heading}
               <span className='hidden md:block'>{slide.subheading}</span>
