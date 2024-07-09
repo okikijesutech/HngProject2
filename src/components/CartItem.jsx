@@ -1,6 +1,6 @@
 import React from "react";
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, imageMap, removeFromCart }) => {
   return (
     <div
       key={item.name}
@@ -8,7 +8,7 @@ const CartItem = ({ item }) => {
     >
       <div className='flex-1 md:w-[200px] lg:w-[400px]'>
         <img
-          src={item.img}
+          src={imageMap[item.img]}
           alt={item.name}
           className='w-full h-40 object-fill rounded-xl'
         />

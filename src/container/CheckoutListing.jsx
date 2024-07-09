@@ -2,12 +2,21 @@ import React from "react";
 import { FaXmark } from "react-icons/fa6";
 import { useCart } from "../context/CartContext";
 import { FaShoppingCart } from "react-icons/fa";
+import imageMap from "../imageMap";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CheckoutListing = () => {
   const { cartItems, removeFromCart } = useCart();
 
+  const handleRemoveFromCart = (itemName) => {
+    removeFromCart(itemName);
+    toast.warning("Item removed successfully from cart!");
+  };
+
   return (
     <div className='p-4'>
+      <ToastContainer />
       <hr className='border-black mb-4' />
       {cartItems.length === 0 ? (
         <div className='flex flex-col justify-center items-center h-full text-center'>
@@ -35,12 +44,12 @@ const CheckoutListing = () => {
                 <td className='text-[#D13737]'>
                   <FaXmark
                     size={14}
-                    onClick={() => removeFromCart(item.name)}
+                    onClick={() => handleRemoveFromCart(item.name)}
                   />
                 </td>
                 <td>
                   <img
-                    src={item.img}
+                    src={imageMap[item.img]}
                     alt={item.name}
                     className='w-8 h-8 md:w-16 md:h-16 lg:w-24 lg:h-24 object-contain rounded-lg'
                   />

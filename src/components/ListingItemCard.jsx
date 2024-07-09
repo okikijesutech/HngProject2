@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { FaStar, FaRegStar, FaHeart, FaRegHeart } from "react-icons/fa";
 import { useFavorites } from "../context/FavoritesContext";
 import { useRatings } from "../context/RatingsContext";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ListingItemCard = ({ item, imageMap, addToCart }) => {

@@ -4,6 +4,8 @@ import Listings from "../container/Listings";
 import { useCart } from "../context/CartContext";
 import { useFavorites } from "../context/FavoritesContext";
 import { useRatings } from "../context/RatingsContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const HomePage = () => {
   const { addToCart } = useCart();
@@ -18,6 +20,7 @@ const HomePage = () => {
         toggleFavorite={toggleFavorite}
         rateProduct={rateProduct}
       />
+      <ToastContainer />
     </div>
   );
 };
