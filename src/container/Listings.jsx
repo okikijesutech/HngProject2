@@ -23,7 +23,7 @@ const Listings = ({ toggleFavorite, rateProduct }) => {
       id='listing'
       className='bg-gradient-to-b from-[#FFFCFB] to-[#FBCDBD] p-4'
     >
-      <div className='bg-[#4670DC] w-[105px] md:w-[160px] text-white p-2 rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] md:mx-auto mt-9 flex items-center'>
+      <div className='bg-[#4670DC] w-[125px] md:w-[160px] text-white p-2 rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] md:mx-auto mt-9 flex items-center'>
         <p className='font-custom-weight font-SansSerifBldFLF text-base md:text-2xl'>
           New Arrivals
         </p>
