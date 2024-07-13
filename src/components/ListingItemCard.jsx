@@ -40,7 +40,7 @@ const ListingItemCard = ({ item, imageMap, addToCart }) => {
     <div className='min-w-[150px] max-w-[193px] h-[320px] md:min-w-[225px] lg:min-w-[300px] font-Helvetica p-1 group hover:shadow-lg transition-shadow duration-300'>
       <div className='shadow-md'>    
           <img
-            src={item.item.photos[0].url}
+            src={item.photos[0].url}
             alt={item.name}
             className='w-full h-40 md:h-48 object-fill'
           />
