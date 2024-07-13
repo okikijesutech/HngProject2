@@ -5,11 +5,12 @@ import { FaShoppingCart } from "react-icons/fa";
 import imageMap from "../imageMap";
 
 const CartItemList = () => {
-  const { cartItems, removeFromCart } = useCart();
+  const { cartItems, removeFromCart, increaseQuantity, decreaseQuantity } =
+    useCart();
 
   return (
     <div
-      className='flex flex-col gap-4 w-full overflow-y-auto custom-scrollbar p-2 md:p-4 '
+      className='flex flex-col gap-4 w-full overflow-y-auto custom-scrollbar p-2 md:p-4'
       style={{ maxHeight: "600px", minHeight: "600px" }}
     >
       {cartItems.length === 0 ? (
@@ -26,6 +27,8 @@ const CartItemList = () => {
             item={item}
             imageMap={imageMap}
             removeFromCart={removeFromCart}
+            increaseQuantity={increaseQuantity}
+            decreaseQuantity={decreaseQuantity}
           />
         ))
       )}

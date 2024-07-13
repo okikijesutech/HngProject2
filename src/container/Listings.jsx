@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import ListingItemCard from "../components/ListingItemCard";
 import Pagination from "../components/Pagination";
-import products from "../items.json";
-import imageMap from "../imageMap";
 import { useCart } from "../context/CartContext";
 
 const Listings = ({ toggleFavorite, rateProduct }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const { addToCart } = useCart();
-  const [itemsPerPage, setItemsPerPage] = useState(9);
+  const [itemsPerPage, setItemsPerPage] = useState(12);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const calculateItemsPerPage = () => {
-    if (window.innerWidth < 768) {
-      setItemsPerPage(10);
-    } else {
-      setItemsPerPage(9);
-    }
+    setItemsPerPage(window.innerWidth < 768 ? 10 : 12);
   };
 
   useEffect(() => {
@@ -26,13 +24,76 @@ const Listings = ({ toggleFavorite, rateProduct }) => {
     };
   }, []);
 
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(
+          "https://timbu-get-all-products.reavdev.workers.dev/",
+          {
+            params: {
+              organization_id: "828acd2c75f4493d9827fb95c9786692",
+              reverse_sort: false,
+              page: currentPage,
+              size: itemsPerPage,
+              Appid: "NSTSU0GGJ09HEO1",
+              Apikey: "646b49567d604690acf470bff8428e6420240712191010544305",
+            },
+          }
+        );
+
+        if (Array.isArray(response.data.items)) {
+          setProducts(response.data.items);
+        } else if (Array.isArray(response.data)) {
+          setProducts(response.data);
+        } else {
+          setError(new Error("Unexpected response format"));
+        }
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProduct();
+  }, [currentPage, itemsPerPage]);
+
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentProducts = products.slice(indexOfFirstItem, indexOfLastItem);
+  const currentProducts = Array.isArray(products)
+    ? products.slice(indexOfFirstItem, indexOfLastItem)
+    : [];
+
+  if (loading) {
+    return (
+      <div
+        id='listing'
+        className='flex items-center justify-center bg-gradient-to-b from-[#FFFCFB] to-[#FBCDBD] p-4 min-h-screen'
+      >
+        <div className='text-center'>
+          <div className='loader'></div>
+          <p className='text-lg text-gray-700'>Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div
+        id='listing'
+        className='flex items-center justify-center bg-gradient-to-b from-[#FFFCFB] to-[#FBCDBD] p-4 min-h-screen'
+      >
+        <div className='text-center'>
+          <p className='text-lg text-red-700'>Error: {error.message}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -46,11 +107,9 @@ const Listings = ({ toggleFavorite, rateProduct }) => {
       </div>
       <div className='grid grid-cols-2 md:grid-cols-3 gap-4 mt-12'>
         {currentProducts.map((product) => (
-          <div className='md:px-10 lg:px-24'>
+          <div className='md:px-10 lg:px-24' key={product.id}>
             <ListingItemCard
-              key={product.id}
               item={product}
-              imageMap={imageMap}
               addToCart={addToCart}
               toggleFavorite={toggleFavorite}
               rateProduct={rateProduct}

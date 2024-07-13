@@ -28,6 +28,7 @@ const Cart = () => {
   };
 
   const itemCount = cartItems.reduce((total, item) => total + item.unit, 0);
+  const isCartEmpty = itemCount === 0;
 
   return (
     <div className='bg-gradient-to-b from-[#FFFCFB] to-[#FBCDBD] px-4 pt-16 font-Helvetica'>
@@ -65,13 +66,19 @@ const Cart = () => {
           <div className='flex flex-col md:flex-row justify-center md:justify-between items-center w-full'>
             <Link
               to='/checkout'
-              className='text-[#4670DC] bg-white font-Helvetica font-bold text-base lg:text-xl px-4 py-2 w-1/2 mt-4 md:mt-[40px] md:mr-2 text-center'
+              className={`text-[#4670DC] bg-white font-Helvetica font-bold text-base lg:text-xl px-4 py-2 w-1/2 mt-4 md:mt-[40px] md:mr-2 text-center ${
+                isCartEmpty ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+              onClick={(e) => isCartEmpty && e.preventDefault()}
             >
               Payment
             </Link>
             <Link
               to='/checkout'
-              className='bg-[#4670DC] text-white font-Helvetica font-bold text-base lg:text-xl px-4 py-2 w-1/2 mt-4 md:mt-[40px] md:ml-2 text-center'
+              className={`bg-[#4670DC] text-white font-Helvetica font-bold text-base lg:text-xl px-4 py-2 w-1/2 mt-4 md:mt-[40px] md:ml-2 text-center ${
+                isCartEmpty ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+              onClick={(e) => isCartEmpty && e.preventDefault()}
             >
               CHECK OUT
             </Link>

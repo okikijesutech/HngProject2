@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const CheckOut = () => {
   const [activeSection, setActiveSection] = useState("shipping");
-  const { clearCart } = useCart();
+  const { cartItems, clearCart } = useCart();
   const navigate = useNavigate();
 
   const toggleSection = (section) => {
@@ -24,6 +24,8 @@ const CheckOut = () => {
       navigate("/");
     }, 2000);
   };
+
+  const isCartEmpty = cartItems.length === 0;
 
   return (
     <div className='bg-gradient-to-b from-[#FFFCFB] to-[#FBCDBD] px-4 pt-6 lg:pt-16 font-Helvetica'>
@@ -77,10 +79,17 @@ const CheckOut = () => {
         <button
           className='bg-[#4670DC] text-white px-4 py-3 mx-auto w-full md:w-[300px] text-base md:text-xl lg:text-2xl font-bold'
           onClick={handleOrderClick}
+          disabled={isCartEmpty}
         >
           ORDER
         </button>
       </div>
+      {isCartEmpty && (
+        <p className='text-red-500 text-center'>
+          Your cart is empty. Please add items to your cart before placing an
+          order.
+        </p>
+      )}
     </div>
   );
 };

@@ -28,23 +28,33 @@ const ListingItemCard = ({ item, imageMap, addToCart }) => {
 
   const handleRateProduct = (itemId, ratingValue) => {
     rateProduct(itemId, ratingValue);
-
     toast.success("Thanks for rating this product!");
   };
+
+  const currentPrice =
+    item.current_price && item.current_price[0]
+      ? item.current_price[0]["NGN"][0]
+      : "Price not available";
 
   return (
     <div className='min-w-[150px] max-w-[193px] h-[320px] md:min-w-[225px] lg:min-w-[300px] font-Helvetica p-1 group hover:shadow-lg transition-shadow duration-300'>
       <div className='shadow-md'>
-        <img
-          src={imageMap[item.img]}
-          alt={item.name}
-          className='w-full h-40 md:h-48 object-fill'
-        />
+        {item.product_image.length > 0 && (
+          <img
+            src={item.item.photos[0].url}
+            alt={item.name}
+            className='w-full h-40 md:h-48 object-fill'
+          />
+        )}
       </div>
       <div className='text-base font-normal'>
         <p>{item.name}</p>
-        <p>{item.category}</p>
-        <p className='text-[#4670DC] font-bold'>{item.price}</p>
+        <p>{item.description}</p>
+        <p className='text-[#4670DC] font-bold'>
+          {currentPrice !== "Price not available"
+            ? `$${currentPrice}`
+            : currentPrice}
+        </p>
       </div>
       <div className='flex justify-between my-2 md:my-1'>
         <div className='flex'>

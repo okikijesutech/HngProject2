@@ -4,17 +4,26 @@ import { useCart } from "../context/CartContext";
 const PaymentSummary = () => {
   const { cartItems } = useCart();
   const [promoCode, setPromoCode] = useState("");
+  const [promoApplied, setPromoApplied] = useState(false);
 
   const totalItemsPrice = cartItems.reduce((total, item) => {
-    const price = parseFloat(item.price) || 0;
+    const price = parseFloat(item.current_price[0]["NGN"][0]) || 0;
     const unit = parseInt(item.unit, 10) || 0;
     return total + price * unit;
   }, 0);
 
   const shippingFee = totalItemsPrice > 0 ? 50 : 0;
-
+  const discount = promoApplied ? totalItemsPrice * 0.5 : 0;
   const subtotal = totalItemsPrice + shippingFee;
-  const total = subtotal / 2;
+  const total = subtotal - discount;
+
+  const handleApplyPromo = () => {
+    if (promoCode === "SAVE50") {
+      setPromoApplied(true);
+    } else {
+      alert("Invalid promo code");
+    }
+  };
 
   return (
     <div className='font-Helvetica font-bold lg:w-full'>
@@ -25,16 +34,20 @@ const PaymentSummary = () => {
       </div>
       <div className='p-[6px] bg-[#B1EAC8] text-center mt-4'>
         <p className='font-normal text-base'>
-          50% off. Auto Applied at checkout.
+          {promoApplied
+            ? "50% off applied"
+            : "50% off. Auto Applied at checkout."}
         </p>
       </div>
       <div className='flex justify-between items-center mt-24'>
         <input
           type='text'
           placeholder='Type in your Promo code'
+          value={promoCode}
+          onChange={(e) => setPromoCode(e.target.value)}
           className='font-normal text-lg text-black bg-transparent outline-none'
         />
-        <button>Apply</button>
+        <button onClick={handleApplyPromo}>Apply</button>
       </div>
       <hr className='border-[1px] border-[black]' />
       <div className='mt-2 px-2'>
@@ -52,14 +65,16 @@ const PaymentSummary = () => {
               <td className='flex-1'>
                 <p>Discount</p>
               </td>
-              <td className='flex-1 text-right'>${total.toFixed(2)}</td>
+              <td className='flex-1 text-right'>-${discount.toFixed(2)}</td>
             </tr>
-            <tr className='flex justify-between text-xs text-[#21AF5A]'>
-              <td className='flex-1'>
-                <p>50% off</p>
-              </td>
-              <td className='flex-1 text-right'>-${total.toFixed(2)}</td>
-            </tr>
+            {promoApplied && (
+              <tr className='flex justify-between text-xs text-[#21AF5A]'>
+                <td className='flex-1'>
+                  <p>50% off</p>
+                </td>
+                <td className='flex-1 text-right'>-${discount.toFixed(2)}</td>
+              </tr>
+            )}
             <tr className='flex justify-between'>
               <td className='flex-1'>
                 <p>Shipping Fee</p>
