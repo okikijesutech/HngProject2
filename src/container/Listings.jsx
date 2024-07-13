@@ -7,13 +7,13 @@ import { useCart } from "../context/CartContext";
 const Listings = ({ toggleFavorite, rateProduct }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const { addToCart } = useCart();
-  const [itemsPerPage, setItemsPerPage] = useState(12);
+  const [itemsPerPage, setItemsPerPage] = useState(12); // Maximum 12 items per page
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const calculateItemsPerPage = () => {
-    setItemsPerPage(window.innerWidth < 768 ? 10 : 12);
+    setItemsPerPage(window.innerWidth < 768 ? 10 : 12); // Adjust as needed
   };
 
   useEffect(() => {
@@ -41,7 +41,9 @@ const Listings = ({ toggleFavorite, rateProduct }) => {
             },
           }
         );
+        console.log("API Response:", response.data); // Log API response
 
+        // Check the structure of the response data and set the products state accordingly
         if (Array.isArray(response.data.items)) {
           setProducts(response.data.items);
         } else if (Array.isArray(response.data)) {
