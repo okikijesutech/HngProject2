@@ -5,7 +5,7 @@ const OrderSummary = () => {
   const { cartItems } = useCart();
 
   const totalItemsPrice = cartItems.reduce((total, item) => {
-    const price = parseFloat(item.price) || 0;
+    const price = parseFloat(item.current_price[0].NGN[0]) || 0;
     const unit = parseInt(item.unit, 10) || 0;
     return total + price * unit;
   }, 0);
