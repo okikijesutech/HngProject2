@@ -32,18 +32,16 @@ const Listings = ({ toggleFavorite, rateProduct }) => {
           "https://timbu-get-all-products.reavdev.workers.dev/",
           {
             params: {
-              organization_id: "828acd2c75f4493d9827fb95c9786692",
+              organization_id: import.meta.env.VITE_ORGANIZATION_ID,
               reverse_sort: false,
               page: currentPage,
               size: itemsPerPage,
-              Appid: "NSTSU0GGJ09HEO1",
-              Apikey: "646b49567d604690acf470bff8428e6420240712191010544305",
+              Appid: import.meta.env.VITE_APP_ID,
+              Apikey: import.meta.env.VITE_API_KEY,
             },
           }
         );
-        console.log("API Response:", response.data); // Log API response
 
-        // Check the structure of the response data and set the products state accordingly
         if (Array.isArray(response.data.items)) {
           setProducts(response.data.items);
         } else if (Array.isArray(response.data)) {
